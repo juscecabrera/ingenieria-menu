@@ -1,22 +1,31 @@
-.layoutside-svg-2-wrapper {
-    // display: flex;
-    // justify-content: center;
-    // align-items: center;
-    // flex-direction: row;
+.layoutside-svg-wrapper {
     display: grid;
     grid-template-columns: 30% 70%;
     border-bottom: 1px solid black;
     padding: 1rem 2rem;
 
-    .layoutside-svg-2 {
+    .layoutside-svg {
         grid-column: 1;
         width: 100%;
         height: 100%;
     }
-    p {
+    
+    .layoutside-p {
         grid-column: 2;
         margin-left: 1rem;
-        font-size: 25px;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        p {
+            font-size: 25px;
+        }
+
     }
 
+}
+
+.layoutside-svg-wrapper:hover {
+    cursor: pointer;
+    background-color: rgb(0,0,0,0.1);
 }

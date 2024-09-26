@@ -534,26 +534,57 @@
   justify-content: center;
   align-items: center;
   flex-direction: row;
-  padding: 2rem;
+  padding: 5%;
   border-bottom: 1px solid black;
 }
 .layoutside-wrapper .layoutside-svg-1-wrapper .layoutside-svg-1 {
   width: 90%;
 }
 
-.layoutside-svg-2-wrapper {
+.layoutside-svg-wrapper {
   display: grid;
   grid-template-columns: 30% 70%;
   border-bottom: 1px solid black;
   padding: 1rem 2rem;
 }
-.layoutside-svg-2-wrapper .layoutside-svg-2 {
+.layoutside-svg-wrapper .layoutside-svg {
   grid-column: 1;
   width: 100%;
   height: 100%;
 }
-.layoutside-svg-2-wrapper p {
+.layoutside-svg-wrapper .layoutside-p {
   grid-column: 2;
   margin-left: 1rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+.layoutside-svg-wrapper .layoutside-p p {
   font-size: 25px;
+}
+
+.layoutside-svg-wrapper:hover {
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.platos-wrapper {
+  border: 1px solid black;
+  margin-top: 9.1%;
+  margin-left: 10%;
+  padding-left: 4rem;
+}
+.platos-wrapper .platos-add-button {
+  padding: 0.5rem;
+  margin: 1rem;
+  border-radius: 10px;
+  border: 1px solid black;
+}
+.platos-wrapper .platos-add-button:hover {
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+.platos-wrapper h2 {
+  font-size: 40px;
 }/*# sourceMappingURL=main.css.map */
