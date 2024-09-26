@@ -1,9 +1,14 @@
-import React from 'react'
+import { useState } from 'react'
+import DataEntry from '../../components/DataEntry/DataEntry'
+import '../../main.css'
+import MockData from '../../utils/mockData'
 
 function Platos() {
-  
+  const [showModal, setShowModal] = useState(false)
+
+
   const handleAddPlate = () => { 
-    alert("agregar plato")
+    setShowModal(!showModal)
    }
   
     return (
@@ -14,18 +19,17 @@ function Platos() {
 
         {/* <p>Aqui mostrar todos los platos actuales de repente</p> */}
 
-        <table>
-            <thead>
-                <th>Nombre</th>
-                <th>Categoria</th>
-                <th>Cantidad Vendida</th>
-            </thead>
-            <tbody>
-                <tr>1</tr>
-                <tr>1</tr>
-                <tr>1</tr>
-            </tbody>
-        </table>
+
+        {showModal
+        ? <div className='platos-modal-wrapper'>
+            <DataEntry setShowModal={setShowModal}/>
+            </div>
+        : ""
+        }
+
+        <p>Esta es data de ejemplo hardcodeada temporal. Aqui ira una tabla con los platos que ingresemos</p> <br></br>
+        <MockData />
+       
     </div>
   )
 }

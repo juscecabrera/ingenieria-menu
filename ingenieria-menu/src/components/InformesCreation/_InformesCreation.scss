@@ -1,0 +1,20 @@
+.informescreation-wrapper {
+    background-color: #fff;
+    width: 40%;
+    height: 60%;
+    padding: 1rem;
+    border-radius: 10px;
+    border: 1px solid black;
+    .informescreation-cancel-button-wrapper {
+        button {
+            height: 2rem;
+            width: 4.5rem;
+            border-radius: 10px;
+            border: 1px solid black;
+        }
+        button:hover {
+            cursor: pointer;
+            background-color: rgb(0,0,0,0.1);
+        }
+    }
+}

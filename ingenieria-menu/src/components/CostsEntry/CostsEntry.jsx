@@ -1,6 +1,6 @@
 import React from 'react'
 
-function CostsEntry() {
+function CostsEntry({ setShowModal }) {
 
     //Al agregar nuevos conceptos, puedo hacer un push y se va a mover todo solo
     const costsentryTableConcepts = [
@@ -43,7 +43,7 @@ function CostsEntry() {
 
 
         <div className='costsentry-cancel-button-wrapper'>
-            <button>Cancelar</button>
+            <button onClick={() => setShowModal(false)}>Cancelar</button>
         </div>
 
     </div>

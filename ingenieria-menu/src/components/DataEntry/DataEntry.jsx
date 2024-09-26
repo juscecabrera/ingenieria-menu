@@ -1,8 +1,13 @@
 import React, { useState } from 'react'
 import '../../main.css'
 
-function DataEntry() {
+function DataEntry({ setShowModal }) {
     const [plateData, setPlateData] = useState({})  
+
+    const closeModal = () => { 
+        setShowModal(false)
+    }
+
 
     const handleChange = (e) => { 
         const value = e.target.value
@@ -56,8 +61,8 @@ function DataEntry() {
         <h1>Agregar registro</h1>
         <div className='dataentry-text-row-1'>Cod. Int.</div>
         <div className='dataentry-input-row-1-wrapper'>
-            <input className='dataentry-input-row-1' type="number" />
-            
+            {/* No deja ingresar data no se porque pero esta bien porque no se deberia poder cambiar */}
+            <input className='dataentry-input-row-1' type="number" name='plate-id'/> 
         </div>
 
         <div className='dataentry-text-row-2-mes'>Mes</div>
@@ -185,15 +190,14 @@ function DataEntry() {
                 onChange={(e) => {handleChange(e)}}    
             />
         </div>
-        <div className='dataentry-input-row-7-wrapper' >
-        </div>
+        
         
         <div className='dataentry-accept-button-wrapper'>
             <button className='dataentry-accept-button'>Aceptar</button>
         </div>
 
         <div className='dataentry-cancel-button-wrapper'>
-            <button className='dataentry-cancel-button'>Cancelar</button>
+            <button className='dataentry-cancel-button' onClick={() => {closeModal()}}>Cancelar</button>
         </div>
     </div>
   )

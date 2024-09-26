@@ -1,4 +1,4 @@
-.platos-wrapper {
+.informes-wrapper {
     border-top: 1px solid black;
     // margin-top: 9.1%;
     margin-top: 5%;
@@ -9,20 +9,20 @@
         font-size: 40px;
     }
     
-    .platos-add-button {
+    .informes-add-button {
         padding: 0.5rem;
         margin: 1rem;
         border-radius: 10px;
         border: 1px solid black;
 
     }
-    .platos-add-button:hover {
+    .informes-add-button:hover {
         cursor: pointer;
         background-color: rgba(0, 0, 0, 0.1);
     }
     
     
-    .platos-modal-wrapper {
+    .informes-modal-wrapper {
         display: flex;
         align-items: center;
         justify-content: center;

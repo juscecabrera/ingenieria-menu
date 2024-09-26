@@ -14,6 +14,8 @@ function LayoutSideOption({ svg, text }) {
       //mostrar Costos
       navigate('/costs')
     } else {
+      navigate('/informes')
+
       //mostrar InformesPopup
     }
   }
