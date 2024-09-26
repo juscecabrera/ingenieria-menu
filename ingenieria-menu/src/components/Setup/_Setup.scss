@@ -1,0 +1,155 @@
+@mixin input-grid {
+    grid-column: 2;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    input {
+        height: 50%;
+        width: 50%;
+        border-radius: 10px;
+        border: 1px solid black;    
+        padding-left: 0.5rem;       
+    }
+}
+
+@mixin p-grid {
+    grid-column: 1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+
+.setup-wrapper {
+    border: 1px solid black;
+    position: absolute;
+    top: 10%;
+    left: 20%;
+    width: 25%;
+    height: 60%;
+    padding: 1rem;
+    border-radius: 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(6, 1fr);
+    column-gap: 10%;
+
+    input {
+        height: 50%;
+        border-radius: 10px;
+        border: 1px solid black;           
+    }
+    .setup-h1-row-1 {
+        grid-column: 1/3;
+        grid-row: 1;
+    }
+
+    .setup-name-wrapper {
+        //Nombre Restaurante e input
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        flex-direction: column;
+        grid-column: 1;
+        grid-row: 2;
+        p {
+            //Nombre restaurante
+            margin: 0 1rem 1rem 0;
+        }
+        input {
+            width: 80%;
+            padding-left: 0.5rem;
+        }
+    }
+
+    .setup-year-wrapper {
+        //Year vigente e input
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        flex-direction: column;
+        grid-column: 2;
+        grid-row: 2;
+        p {
+            //Nombre restaurante
+            margin: 0 0 1rem 0.5rem;
+        }
+        input {
+            padding-left: 0.5rem;
+            width: 50%;
+        }
+    }
+
+    .setup-iva-p-wrapper {
+        grid-row: 3;
+        @include p-grid();
+    }
+
+    .setup-iva-input-wrapper {
+        grid-row: 3;
+        @include input-grid();
+
+    }
+    
+    .setup-rec-p-wrapper {
+        grid-row: 4;
+        @include p-grid();
+    }
+
+    .setup-rec-input-wrapper {
+        grid-row: 4;
+        @include input-grid();
+    }
+
+    .setup-sign-p-wrapper {
+        grid-row: 5;
+        @include p-grid();
+    }
+
+    .setup-sign-input-wrapper {
+        grid-row: 5;
+        grid-column: 2;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        select {
+            height: 50%;
+            width: 50%;
+            border-radius: 10px;
+            border: 1px solid black;    
+            padding-left: 0.5rem;       
+        }
+    }
+
+    .setup-accept-button {
+        grid-column: 1;
+        grid-row: 6;
+        @include p-grid();
+        button {
+            width: 60%;
+            height: 50%;
+            border-radius: 10px;
+            border: 1px solid black;
+        }
+        button:hover {
+            cursor: pointer;
+            background-color: rgb(0,0,0,0.1);
+        }
+    }
+
+    .setup-cancel-button {
+        grid-column: 2;
+        grid-row: 6;
+        @include input-grid();
+        button {
+            width: 60%;
+            height: 50%;
+            border-radius: 10px;
+            border: 1px solid black;
+        }
+        button:hover {
+            cursor: pointer;
+            background-color: rgb(0,0,0,0.1);
+        }
+    }
+}

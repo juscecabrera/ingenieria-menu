@@ -11,6 +11,7 @@
   width: 40%;
   height: 60%;
   padding: 1rem;
+  border-radius: 10px;
   border: 1px solid black;
   display: grid;
   grid-template-columns: 24% 20% 25% 18%;
@@ -248,4 +249,165 @@
   display: flex;
   align-items: center;
   justify-content: flex-start;
+}
+
+.setup-wrapper {
+  border: 1px solid black;
+  position: absolute;
+  top: 10%;
+  left: 20%;
+  width: 25%;
+  height: 60%;
+  padding: 1rem;
+  border-radius: 10px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(6, 1fr);
+  -moz-column-gap: 10%;
+       column-gap: 10%;
+}
+.setup-wrapper input {
+  height: 50%;
+  border-radius: 10px;
+  border: 1px solid black;
+}
+.setup-wrapper .setup-h1-row-1 {
+  grid-column: 1/3;
+  grid-row: 1;
+}
+.setup-wrapper .setup-name-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  flex-direction: column;
+  grid-column: 1;
+  grid-row: 2;
+}
+.setup-wrapper .setup-name-wrapper p {
+  margin: 0 1rem 1rem 0;
+}
+.setup-wrapper .setup-name-wrapper input {
+  width: 80%;
+  padding-left: 0.5rem;
+}
+.setup-wrapper .setup-year-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  grid-column: 2;
+  grid-row: 2;
+}
+.setup-wrapper .setup-year-wrapper p {
+  margin: 0 0 1rem 0.5rem;
+}
+.setup-wrapper .setup-year-wrapper input {
+  padding-left: 0.5rem;
+  width: 50%;
+}
+.setup-wrapper .setup-iva-p-wrapper {
+  grid-row: 3;
+  grid-column: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.setup-wrapper .setup-iva-input-wrapper {
+  grid-row: 3;
+  grid-column: 2;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.setup-wrapper .setup-iva-input-wrapper input {
+  height: 50%;
+  width: 50%;
+  border-radius: 10px;
+  border: 1px solid black;
+  padding-left: 0.5rem;
+}
+.setup-wrapper .setup-rec-p-wrapper {
+  grid-row: 4;
+  grid-column: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.setup-wrapper .setup-rec-input-wrapper {
+  grid-row: 4;
+  grid-column: 2;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.setup-wrapper .setup-rec-input-wrapper input {
+  height: 50%;
+  width: 50%;
+  border-radius: 10px;
+  border: 1px solid black;
+  padding-left: 0.5rem;
+}
+.setup-wrapper .setup-sign-p-wrapper {
+  grid-row: 5;
+  grid-column: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.setup-wrapper .setup-sign-input-wrapper {
+  grid-row: 5;
+  grid-column: 2;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.setup-wrapper .setup-sign-input-wrapper select {
+  height: 50%;
+  width: 50%;
+  border-radius: 10px;
+  border: 1px solid black;
+  padding-left: 0.5rem;
+}
+.setup-wrapper .setup-accept-button {
+  grid-column: 1;
+  grid-row: 6;
+  grid-column: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.setup-wrapper .setup-accept-button button {
+  width: 60%;
+  height: 50%;
+  border-radius: 10px;
+  border: 1px solid black;
+}
+.setup-wrapper .setup-accept-button button:hover {
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+.setup-wrapper .setup-cancel-button {
+  grid-column: 2;
+  grid-row: 6;
+  grid-column: 2;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.setup-wrapper .setup-cancel-button input {
+  height: 50%;
+  width: 50%;
+  border-radius: 10px;
+  border: 1px solid black;
+  padding-left: 0.5rem;
+}
+.setup-wrapper .setup-cancel-button button {
+  width: 60%;
+  height: 50%;
+  border-radius: 10px;
+  border: 1px solid black;
+}
+.setup-wrapper .setup-cancel-button button:hover {
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.1);
 }/*# sourceMappingURL=main.css.map */
