@@ -1,0 +1,100 @@
+.costsentry-wrapper {
+    position: absolute;
+    top: 10%;
+    left: 20%;
+    width: 30%;
+    height: 70%;
+    padding: 1rem;
+    border-radius: 10px;
+    border: 1px solid black;
+    display: grid;
+    grid-template-rows: 1fr 1fr 6fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 5%;
+    row-gap: 2%;
+
+    h1 {
+        grid-column: 1 / 3;
+    }
+
+    .costsentry-button-wrapper {
+        grid-column: 2;
+        grid-row: 2;
+        border: 1px solid black;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        button {
+            margin: 0.5rem;
+            border-radius: 10px;
+            border: 1px solid black;
+            width: 50%;
+            height: 50%;
+        }
+        button:hover {
+            cursor: pointer;
+            background-color: rgb(0,0,0,0.1);
+        }
+    }
+
+
+    .costsentry-table-wrapper {
+        grid-column: 1/3;
+        grid-row: 3;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        // grid-template-rows: repeat(9, 1fr); //esto tiene que cambiar segun se vayan agregando nuevos conceptos. Al hacer un push al array de conceptos, esto tiene que cambiar, y al no definirlo se define solo
+        column-gap: 5%;
+        row-gap: 2.5%;
+        margin: 1rem 0;
+        padding: 1rem 0;
+        border: 1px solid black;
+        border-radius: 10px;
+        .costsentry-table-p {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+        }
+        .costsentry-table-input {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            input {
+                padding-left: 0.5rem;
+                border: 1px solid black;
+                border-radius: 10px;
+                width: 40%;
+                height: 85%;
+            }
+        }
+    }
+
+    @mixin accept-cancel-button {
+        grid-row: 4;
+        display: flex;
+        align-items: center;
+        button {
+            border-radius: 10px;
+            border: 1px solid black;
+            width: 30%;
+            height: 50%;
+        }
+        button:hover {
+            cursor: pointer;
+            background-color: rgb(0,0,0,0.1);
+        }
+    }
+
+    .costsentry-accept-button-wrapper {
+        justify-content: flex-end;
+        grid-column: 1;
+        @include accept-cancel-button();
+    }
+
+    .costsentry-cancel-button-wrapper {
+        justify-content: flex-start;
+        grid-column: 2;
+        @include accept-cancel-button();
+    }
+}

@@ -410,4 +410,108 @@
 .setup-wrapper .setup-cancel-button button:hover {
   cursor: pointer;
   background-color: rgba(0, 0, 0, 0.1);
+}
+
+.costsentry-wrapper {
+  position: absolute;
+  top: 10%;
+  left: 20%;
+  width: 30%;
+  height: 70%;
+  padding: 1rem;
+  border-radius: 10px;
+  border: 1px solid black;
+  display: grid;
+  grid-template-rows: 1fr 1fr 6fr 1fr;
+  grid-template-columns: 1fr 1fr;
+  -moz-column-gap: 5%;
+       column-gap: 5%;
+  row-gap: 2%;
+}
+.costsentry-wrapper h1 {
+  grid-column: 1/3;
+}
+.costsentry-wrapper .costsentry-button-wrapper {
+  grid-column: 2;
+  grid-row: 2;
+  border: 1px solid black;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.costsentry-wrapper .costsentry-button-wrapper button {
+  margin: 0.5rem;
+  border-radius: 10px;
+  border: 1px solid black;
+  width: 50%;
+  height: 50%;
+}
+.costsentry-wrapper .costsentry-button-wrapper button:hover {
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+.costsentry-wrapper .costsentry-table-wrapper {
+  grid-column: 1/3;
+  grid-row: 3;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  -moz-column-gap: 5%;
+       column-gap: 5%;
+  row-gap: 2.5%;
+  margin: 1rem 0;
+  padding: 1rem 0;
+  border: 1px solid black;
+  border-radius: 10px;
+}
+.costsentry-wrapper .costsentry-table-wrapper .costsentry-table-p {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.costsentry-wrapper .costsentry-table-wrapper .costsentry-table-input {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.costsentry-wrapper .costsentry-table-wrapper .costsentry-table-input input {
+  padding-left: 0.5rem;
+  border: 1px solid black;
+  border-radius: 10px;
+  width: 40%;
+  height: 85%;
+}
+.costsentry-wrapper .costsentry-accept-button-wrapper {
+  justify-content: flex-end;
+  grid-column: 1;
+  grid-row: 4;
+  display: flex;
+  align-items: center;
+}
+.costsentry-wrapper .costsentry-accept-button-wrapper button {
+  border-radius: 10px;
+  border: 1px solid black;
+  width: 30%;
+  height: 50%;
+}
+.costsentry-wrapper .costsentry-accept-button-wrapper button:hover {
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+.costsentry-wrapper .costsentry-cancel-button-wrapper {
+  justify-content: flex-start;
+  grid-column: 2;
+  grid-row: 4;
+  display: flex;
+  align-items: center;
+}
+.costsentry-wrapper .costsentry-cancel-button-wrapper button {
+  border-radius: 10px;
+  border: 1px solid black;
+  width: 30%;
+  height: 50%;
+}
+.costsentry-wrapper .costsentry-cancel-button-wrapper button:hover {
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.1);
 }/*# sourceMappingURL=main.css.map */
