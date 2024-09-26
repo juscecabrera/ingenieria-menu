@@ -539,6 +539,7 @@
   align-items: center;
   flex-direction: row;
   padding: 5%;
+  height: 15%;
   border-bottom: 1px solid black;
 }
 .layoutside-wrapper .layoutside-svg-1-wrapper .layoutside-svg-1 {
