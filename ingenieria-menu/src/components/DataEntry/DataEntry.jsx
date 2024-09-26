@@ -1,7 +1,56 @@
-import React from 'react'
+import React, { useState } from 'react'
 import '../../main.css'
 
 function DataEntry() {
+    const [plateData, setPlateData] = useState({})  
+
+    const handleChange = (e) => { 
+        const value = e.target.value
+        const name = e.target.name
+
+        //aqui validar campos de entrada o usar una funcion externa validateFields e ir por cada campo
+
+
+
+        switch (name) {
+            case "plate-mes":
+                setPlateData({ ...plateData, "Mes_plato": value });
+                break;
+            case "plate-category":
+                setPlateData({ ...plateData, "Categoria_plato": value });
+                break;
+            case "plate-name":
+                setPlateData({ ...plateData, "Nombre_plato": value });
+                break;
+            case "plate-salesnumber":
+                setPlateData({ ...plateData, "Cantidad_vendida_plato": value });
+                break;
+            case "plate-price":
+                setPlateData({ ...plateData, "Precio_plato": value });
+                break;
+            case "plate-iva":
+                setPlateData({ ...plateData, "IVA_plato": value }); // bool
+                break;
+            case "plate-recargo":
+                setPlateData({ ...plateData, "Recargo_plato": value }); // bool
+                break;
+            case "plate-cost":
+                setPlateData({ ...plateData, "Costo_plato": value });
+                break;
+            case "plate-valorvta":
+                setPlateData({ ...plateData, "Valor_vta_plato": value });
+                break;
+            case "plate-days":
+                setPlateData({ ...plateData, "Dias_plato": value });
+                break;
+            default:
+                break;
+        }
+        
+
+        
+     }
+
   return (
     <div className='dataentry-wrapper'>
         <h1>Agregar registro</h1>
@@ -13,45 +62,45 @@ function DataEntry() {
 
         <div className='dataentry-text-row-2-mes'>Mes</div>
         <div className='dataentry-input-row-2-mes-wrapper'>
-            <select className='dataentry-input-row-2-mes' name="dataentry-mes" id="">
-                <option>Mes</option>
-                <option value="">1</option>
-                <option value="">2</option>
-                <option value="">3</option>
-                <option value="">4</option>
-                <option value="">5</option>
-                <option value="">6</option>
-                <option value="">7</option>
-                <option value="">8</option>
-                <option value="">9</option>
-                <option value="">10</option>
-                <option value="">11</option>
-                <option value="">12</option>
+            <select className='dataentry-input-row-2-mes' name="plate-mes" onChange={(e) => handleChange(e)}>
+                <option value={""}>Mes</option>
+                <option value={"1"}>1</option>
+                <option value={"2"}>2</option>
+                <option value={"3"}>3</option>
+                <option value={"4"}>4</option>
+                <option value={"5"}>5</option>
+                <option value={"6"}>6</option>
+                <option value={"7"}>7</option>
+                <option value={"8"}>8</option>
+                <option value={"9"}>9</option>
+                <option value={"10"}>10</option>
+                <option value={"11"}>11</option>
+                <option value={"12"}>12</option>
             </select>
 
         </div>
 
         <div className='dataentry-text-row-2-cat'>Categoria</div>
         <div className='dataentry-input-row-2-cat-wrapper'>
-            <select className='dataentry-input-row-2-cat' name="dataentry-mes" id="">
+            <select className='dataentry-input-row-2-cat' name="plate-category" onChange={(e) => handleChange(e)}>
                 <option>Seleccione una opcion</option>
-                <option value="">ENTRADAS</option>
-                <option value="">FONDOS</option>
-                <option value="">POSTRES</option>
-                <option value="">BEBIDAS</option>
+                <option value={"ENTRADAS"}>ENTRADAS</option>
+                <option value={"FONDOS"}>FONDOS</option>
+                <option value={"POSTRES"}>POSTRES</option>
+                <option value={"BEBIDAS"}>BEBIDAS</option>
             </select>
             
         </div>
 
         <div className='dataentry-text-row-2-button-wrapper'>
-            <button className='dataentry-text-row-2-button'>Nueva Cat.</button>
+            <button className='dataentry-text-row-2-button'>Nueva Categoria</button>
         </div>
 
         <div className='dataentry-text-row-3'>Plato</div>
         <div className='dataentry-input-row-3-wrapper'>
-            <select className='dataentry-input-row-3' name="dataentry-plato" id="">
-                <option></option>
-                <option>Plato 1</option>
+            <select className='dataentry-input-row-3' name="plate-name" onChange={(e) => handleChange(e)}>
+                <option>Seleccione un plato</option>
+                <option value={"Plato 1"}>Plato 1</option>
             </select>
 
         </div>
@@ -63,43 +112,80 @@ function DataEntry() {
 
         <div className='dataentry-text-row-4'>Cant. Vendida</div>
         <div className='dataentry-input-row-4-wrapper'>
-            <input className='dataentry-input-row-4' type="number" />
+            <input 
+                className='dataentry-input-row-4'
+                type="number" 
+                name='plate-salesnumber'
+                onChange={(e) => {handleChange(e)}} />
         </div>
 
 
-        <div className='dataentry-text-row-5'>Precio de Vta.</div>
+        <div className='dataentry-text-row-5'>Precio de Venta</div>
         <div className='dataentry-input-row-5-wrapper'>
-            <input className='dataentry-input-row-5' type="number" />
+            <input 
+                className='dataentry-input-row-5' 
+                type="number"
+                name='plate-price'
+                onChange={(e) => {handleChange(e)}} />
         </div>
 
-        <div className='dataentry-text-row-5-iva'>
+        {/* Estoy pensando sacar estos dos porque asumimos que siempre esta incluido */}
+        {/* <div className='dataentry-text-row-5-iva'>
             IVA (IGV)
-            <input className='dataentry-input-row-5-iva' type="checkbox" />
+            <input 
+                className='dataentry-input-row-5-iva' 
+                type="checkbox" 
+                name='plate-iva'
+                onChange={(e) => {handleChange(e)}}
+            />
         </div>
         
-            <div className='dataentry-div-row-5'>
-
-                <p className='dataentry-text-row-5-rec'>Rec. al consumo</p>
-                <input className='dataentry-input-row-5-rec' type="checkbox" />
-            </div>
+        <div className='dataentry-div-row-5'>
+            <p className='dataentry-text-row-5-rec'>Rec. al consumo</p>
+            <input 
+                className='dataentry-input-row-5-rec' 
+                type="checkbox" 
+                name='plate-recargo'
+                onChange={(e) => {handleChange(e)}}    
+            />
+        </div> */}
 
 
         <div className='dataentry-text-row-6'>Costo Variable</div>
         <div className='dataentry-input-row-6-wrapper'>
-            <input className='dataentry-input-row-6' type="number" />
+            <input 
+                className='dataentry-input-row-6' 
+                type="number" 
+                name='plate-cost'
+                onChange={(e) => {handleChange(e)}}    
+            />
         </div>
 
-        <div className='dataentry-text-row-6-valor'>
+        {/* <div className='dataentry-text-row-6-valor'>
             Valor Vta.(%)
-            <input className='dataentry-input-row-6-valor' type="checkbox" />
-        </div>
+            
+            <input 
+                className='dataentry-input-row-6-valor' 
+                type="number" 
+                name='plate-valorvta'
+                onChange={(e) => {handleChange(e)}}    
+            />
+        </div> */}
+        
         {/* <div className='dataentry-input-row-6-valor-wrapper'>
         </div> */}
 
         
-        <div className='dataentry-text-row-7'>Presentacion</div>
+        <div className='dataentry-text-row-7'>
+            Dias en carta
+            <input 
+                className='dataentry-input-row-7' 
+                type="number" 
+                name='plate-days'
+                onChange={(e) => {handleChange(e)}}    
+            />
+        </div>
         <div className='dataentry-input-row-7-wrapper' >
-            <input className='dataentry-input-row-7' type="number" />dias
         </div>
         
         <div className='dataentry-accept-button-wrapper'>
