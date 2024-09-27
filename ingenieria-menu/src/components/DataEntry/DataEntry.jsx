@@ -1,8 +1,20 @@
 import React, { useState } from 'react'
 import '../../main.css'
+import { createPlate } from '../../../utils/fetchsData'
+import { urlServer } from '../../../utils/constantURL'
 
 function DataEntry({ setShowModal }) {
     const [plateData, setPlateData] = useState({})  
+
+    const handleAcceptButton = () => {
+        try {
+            createPlate(urlServer, plateData)
+            setShowModal(false)
+        } catch (error) {
+            console.log("Error en front al fetchPlates", error);
+        }
+    }
+
 
     const closeModal = () => { 
         setShowModal(false)
@@ -193,7 +205,7 @@ function DataEntry({ setShowModal }) {
         
         
         <div className='dataentry-accept-button-wrapper'>
-            <button className='dataentry-accept-button'>Aceptar</button>
+            <button className='dataentry-accept-button' onClick={() => {handleAcceptButton()}}>Aceptar</button>
         </div>
 
         <div className='dataentry-cancel-button-wrapper'>
