@@ -599,13 +599,33 @@
   cursor: pointer;
   background-color: rgba(0, 0, 0, 0.1);
 }
-.platos-wrapper .platos-table {
+.platos-wrapper .platos-table-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.platos-wrapper .platos-table-wrapper img {
+  width: 5%;
+}
+.platos-wrapper .platos-table-wrapper .platos-table {
   border: 1px solid black;
   border-collapse: collapse;
 }
-.platos-wrapper .platos-table thead, .platos-wrapper .platos-table th, .platos-wrapper .platos-table td {
+.platos-wrapper .platos-table-wrapper .platos-table thead, .platos-wrapper .platos-table-wrapper .platos-table th, .platos-wrapper .platos-table-wrapper .platos-table td {
   padding: 0.25rem;
   border: 1px solid black;
+  text-align: center;
+}
+.platos-wrapper .platos-table-wrapper .platos-table thead button, .platos-wrapper .platos-table-wrapper .platos-table th button, .platos-wrapper .platos-table-wrapper .platos-table td button {
+  width: 5rem;
+  height: 2rem;
+  border-radius: 10px;
+  border: 1px solid black;
+  padding: 0.5rem;
+}
+.platos-wrapper .platos-table-wrapper .platos-table thead button:hover, .platos-wrapper .platos-table-wrapper .platos-table th button:hover, .platos-wrapper .platos-table-wrapper .platos-table td button:hover {
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.1);
 }
 .platos-wrapper .platos-modal-wrapper {
   display: flex;

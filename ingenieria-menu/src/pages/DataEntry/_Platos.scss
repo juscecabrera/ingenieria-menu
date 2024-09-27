@@ -21,15 +21,39 @@
         background-color: rgba(0, 0, 0, 0.1);
     }
     
-    .platos-table {
-        border: 1px solid black;
-        border-collapse: collapse;
-        thead, th, td {
-            padding: 0.25rem;
-            border: 1px solid black;
-
+    .platos-table-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        img {
+            width: 5%;
         }
+
+        .platos-table {
+            border: 1px solid black;
+            border-collapse: collapse;
+            thead, th, td {
+                padding: 0.25rem;
+                border: 1px solid black;
+                text-align: center;
+                button {
+                    // padding: 1rem;
+                    width: 5rem;
+                    height: 2rem;
+                    // margin: 1rem;
+                    border-radius: 10px;
+                    border: 1px solid black;   
+                    padding: 0.5rem;     
+                }
+                button:hover {
+                    cursor: pointer;
+                    background-color: rgba(0, 0, 0, 0.1);
+                }
+            }
+        }
+
     }
+
 
 
     .platos-modal-wrapper {
