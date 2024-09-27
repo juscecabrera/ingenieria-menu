@@ -52,3 +52,58 @@ export const createPlate = (urlServer, plateData) => {
     }); 
   
 }
+
+export const fetchCosts = (urlServer, setCostsData, setLoading) => { 
+    fetch(`${urlServer}/api/costs`)
+    .then(response => {
+      if (!response.ok) {
+          throw new Error('Error en la solicitud');
+      }
+      return response.json(); 
+    })
+    .then(data => {
+        setCostsData(data)
+        setLoading(false)
+    })
+    .catch(error => {
+        console.error('Hubo un problema con la solicitud en fetchCosts:', error);
+    });    
+}
+
+export const createCosts = (urlServer, costsData) => { 
+    const payload = {
+        Sueldo_Cocina : costsData.Sueldo_Cocina,
+        Sueldo_Servicio : costsData.Sueldo_Servicio,
+        Sueldos_Administrativos : costsData.Sueldos_Administrativos,
+        Alquiler: costsData.Alquiler,
+        Depreciacion : costsData.Depreciacion,
+        Servicios_basicos : costsData.Servicios_basicos,
+        Publicidad : costsData.Publicidad,
+        Internet : costsData.Internet,
+        Otros : costsData.Otros,
+        Mes : costsData.Mes,
+    }
+
+    const urlCreatePlate = `${urlServer}/api/costs`
+    
+    fetch(urlCreatePlate, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json', 
+            },
+        body: JSON.stringify(payload),     
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Error en la solicitud');
+        }
+        return response.json(); 
+    })
+    .then(data => {
+        console.log("Costos creados correctamente", data)
+    })
+    .catch(error => {
+        console.error('Hubo un problema con la solicitud en fetchData:', error);
+    }); 
+
+}

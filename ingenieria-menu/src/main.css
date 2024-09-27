@@ -525,6 +525,24 @@
   cursor: pointer;
   background-color: rgba(0, 0, 0, 0.1);
 }
+.costsentry-wrapper .costsentry-exit-button-wrapper {
+  justify-content: flex-end;
+  margin-left: 5rem;
+  grid-column: 2;
+  grid-row: 4;
+  display: flex;
+  align-items: center;
+}
+.costsentry-wrapper .costsentry-exit-button-wrapper button {
+  border-radius: 10px;
+  border: 1px solid black;
+  width: 30%;
+  height: 50%;
+}
+.costsentry-wrapper .costsentry-exit-button-wrapper button:hover {
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.1);
+}
 
 .layoutside-wrapper {
   position: absolute;

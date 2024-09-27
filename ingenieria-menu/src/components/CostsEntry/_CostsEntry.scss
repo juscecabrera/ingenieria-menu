@@ -95,4 +95,12 @@
         grid-column: 2;
         @include accept-cancel-button();
     }
+
+    .costsentry-exit-button-wrapper {
+        justify-content: flex-end;
+        margin-left: 5rem;
+        grid-column: 2;
+        @include accept-cancel-button();
+
+    }
 }
