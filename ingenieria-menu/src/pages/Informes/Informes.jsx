@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import MockData from '../../utils/mockData.jsx'
 import InformesCreation from '../../components/InformesCreation/InformesCreation'
 
 function Informes() {
@@ -27,7 +26,6 @@ function Informes() {
         }
 
         <p>Esta es data de ejemplo hardcodeada temporal. Aqui ira una tabla con los informes que ingresemos</p> <br></br>
-        <MockData />
        
     </div>
   )

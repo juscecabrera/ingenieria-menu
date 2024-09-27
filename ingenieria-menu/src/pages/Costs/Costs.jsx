@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react'
 import CostsEntry from '../../components/CostsEntry/CostsEntry.jsx'
-import MockData from '../../utils/mockData.jsx'
 import { fetchCosts } from '../../../utils/fetchsData.js'
 import { urlServer } from '../../../utils/constantURL.js'
 import CostsTable from '../../components/CostsTable/CostsTable.jsx'
