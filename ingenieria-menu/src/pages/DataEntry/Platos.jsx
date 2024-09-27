@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import DataEntry from '../../components/DataEntry/DataEntry'
 import '../../main.css'
-import MockData from '../../utils/mockData'
+// import MockData from '../../utils/mockData.jsx'
 import { urlServer } from '../../../utils/constantURL.js'
 import { fetchPlates } from '../../../utils/fetchsData'
 import SpinnerSVG from '../../assets/svg/spinnerSVG.svg'
