@@ -3,13 +3,15 @@ import '../../main.css'
 import { createPlate } from '../../../utils/fetchsData'
 import { urlServer } from '../../../utils/constantURL'
 
-function DataEntry({ setShowModal }) {
+function DataEntry({ setShowModal, refreshButton }) {
     const [plateData, setPlateData] = useState({})  
 
     const handleAcceptButton = () => {
         try {
             createPlate(urlServer, plateData)
-            setShowModal(false)
+            setTimeout(() => {
+                refreshButton()
+            }, 200);
         } catch (error) {
             console.log("Error en front al fetchPlates", error);
         }
@@ -18,6 +20,7 @@ function DataEntry({ setShowModal }) {
 
     const closeModal = () => { 
         setShowModal(false)
+        refreshButton()
     }
 
 
@@ -205,12 +208,17 @@ function DataEntry({ setShowModal }) {
         
         
         <div className='dataentry-accept-button-wrapper'>
-            <button className='dataentry-accept-button' onClick={() => {handleAcceptButton()}}>Aceptar</button>
+            <button className='dataentry-accept-button' onClick={() => {handleAcceptButton()}}>Agregar</button>
         </div>
 
         <div className='dataentry-cancel-button-wrapper'>
             <button className='dataentry-cancel-button' onClick={() => {closeModal()}}>Cancelar</button>
         </div>
+
+        <div className='dataentry-exit-button-wrapper'>
+            <button className='dataentry-exit-button' onClick={() => {closeModal()}}>Salir</button>
+        </div>
+
     </div>
   )
 }

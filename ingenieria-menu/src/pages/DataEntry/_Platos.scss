@@ -21,7 +21,17 @@
         background-color: rgba(0, 0, 0, 0.1);
     }
     
-    
+    .platos-table {
+        border: 1px solid black;
+        border-collapse: collapse;
+        thead, th, td {
+            padding: 0.25rem;
+            border: 1px solid black;
+
+        }
+    }
+
+
     .platos-modal-wrapper {
         display: flex;
         align-items: center;

@@ -231,22 +231,27 @@
     }
 
 
-.dataentry-accept-button-wrapper, .dataentry-cancel-button-wrapper {
-    grid-row: 8;
-    button {
-        height: 2rem;
-        width: 4.5rem;
+    .dataentry-accept-button-wrapper, .dataentry-cancel-button-wrapper, .dataentry-exit-button-wrapper {
+        grid-row: 8;
+        button {
+            height: 2rem;
+            width: 4.5rem;
+        }
+
     }
 
-}
+    .dataentry-accept-button-wrapper {
+        grid-column: 2;
+        @include flex-row(flex-end);
+    }
 
-.dataentry-accept-button-wrapper {
-    grid-column: 2;
-    @include flex-row(flex-end);
-}
-
-.dataentry-cancel-button-wrapper {
-    grid-column: 3;
-    @include flex-row(flex-start);
-}
+    .dataentry-cancel-button-wrapper {
+        grid-column: 3;
+        @include flex-row(flex-start);
+    }
+    .dataentry-exit-button-wrapper {
+        grid-column: 4;
+        // margin-left: 5rem;
+        @include flex-row(flex-start);
+    }
 }

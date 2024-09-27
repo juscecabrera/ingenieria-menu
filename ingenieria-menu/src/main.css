@@ -237,10 +237,10 @@
 .dataentry-wrapper .dataentry-text-row-3-button-wrapper {
   grid-row: 4;
 }
-.dataentry-wrapper .dataentry-accept-button-wrapper, .dataentry-wrapper .dataentry-cancel-button-wrapper {
+.dataentry-wrapper .dataentry-accept-button-wrapper, .dataentry-wrapper .dataentry-cancel-button-wrapper, .dataentry-wrapper .dataentry-exit-button-wrapper {
   grid-row: 8;
 }
-.dataentry-wrapper .dataentry-accept-button-wrapper button, .dataentry-wrapper .dataentry-cancel-button-wrapper button {
+.dataentry-wrapper .dataentry-accept-button-wrapper button, .dataentry-wrapper .dataentry-cancel-button-wrapper button, .dataentry-wrapper .dataentry-exit-button-wrapper button {
   height: 2rem;
   width: 4.5rem;
 }
@@ -252,6 +252,12 @@
 }
 .dataentry-wrapper .dataentry-cancel-button-wrapper {
   grid-column: 3;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.dataentry-wrapper .dataentry-exit-button-wrapper {
+  grid-column: 4;
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -592,6 +598,14 @@
 .platos-wrapper .platos-add-button:hover {
   cursor: pointer;
   background-color: rgba(0, 0, 0, 0.1);
+}
+.platos-wrapper .platos-table {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+.platos-wrapper .platos-table thead, .platos-wrapper .platos-table th, .platos-wrapper .platos-table td {
+  padding: 0.25rem;
+  border: 1px solid black;
 }
 .platos-wrapper .platos-modal-wrapper {
   display: flex;

@@ -1,5 +1,5 @@
 
-export const fetchPlates = (urlServer, setDataEx) => {
+export const fetchPlates = (urlServer, setPlatesData) => {
     fetch(`${urlServer}/api/plates`)
     .then(response => {
       if (!response.ok) {
@@ -8,8 +8,7 @@ export const fetchPlates = (urlServer, setDataEx) => {
       return response.json(); 
     })
     .then(data => {
-      setDataEx(data)
-
+        setPlatesData(data)
     })
     .catch(error => {
     console.error('Hubo un problema con la solicitud en fetchData:', error);
