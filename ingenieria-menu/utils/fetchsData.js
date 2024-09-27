@@ -74,7 +74,7 @@ export const createCosts = (urlServer, costsData) => {
     const payload = {
         Sueldo_Cocina : costsData.Sueldo_Cocina,
         Sueldo_Servicio : costsData.Sueldo_Servicio,
-        Sueldos_Administrativos : costsData.Sueldos_Administrativos,
+        Sueldo_Administrativos : costsData.Sueldo_Administrativos,
         Alquiler: costsData.Alquiler,
         Depreciacion : costsData.Depreciacion,
         Servicios_basicos : costsData.Servicios_basicos,

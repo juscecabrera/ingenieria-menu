@@ -4,6 +4,7 @@ import MockData from '../../utils/mockData.jsx'
 import { fetchCosts } from '../../../utils/fetchsData.js'
 import { urlServer } from '../../../utils/constantURL.js'
 import CostsTable from '../../components/CostsTable/CostsTable.jsx'
+import SpinnerSVG from '../../assets/svg/spinnerSVG.svg'
 
 
 function Costs() {
@@ -11,16 +12,6 @@ function Costs() {
     const [costsData, setCostsData] = useState([])
     const [loading, setLoading] = useState(true)
   
-
-    const handleAddCosts = () => { 
-        setShowModal(!showModal)
-    }
-    
-    const refreshButton = () => {
-        // setLoading(true)
-        fetchCosts(urlServer, setCostsData, setLoading)
-    }
-
     useEffect(() => {
         try {
             fetchCosts(urlServer, setCostsData, setLoading)    
@@ -28,7 +19,16 @@ function Costs() {
             console.log("Error en front al fetchCosts", error);   
         }
     }, [])
-    
+
+
+    const refreshButton = () => {
+        setLoading(true)
+        fetchCosts(urlServer, setCostsData, setLoading)
+    }
+
+    const handleAddCosts = () => { 
+        setShowModal(!showModal)
+    }    
   
     return (
     <div className='costs-wrapper'>
@@ -38,14 +38,16 @@ function Costs() {
 
         <button className='costs-add-button' onClick={() => refreshButton()}>Actualizar</button>
 
+        <div className='costs-table-wrapper'>
+            {loading 
+            ?  <img src={SpinnerSVG} className='users-spinner' />
+            : <CostsTable costsData={costsData}/>}
 
-        {loading 
-        ? "" 
-        : <CostsTable costsData={costsData}/>}
+        </div>
 
         {showModal
         ? <div className='costs-modal-wrapper'>
-            <CostsEntry setShowModal={setShowModal}/>
+            <CostsEntry setShowModal={setShowModal} refreshButton={refreshButton}/>
             </div>
         : ""
         }

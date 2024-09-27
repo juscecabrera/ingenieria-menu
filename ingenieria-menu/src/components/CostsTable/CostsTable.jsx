@@ -3,7 +3,7 @@ import React from 'react'
 function CostsTable({ costsData }) {
   return (
     <>
-        <table className='platos-table'>
+        <table className='costs-table'>
         <thead>
             <tr>
                 <th>Código</th> 
