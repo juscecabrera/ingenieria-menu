@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import MockData from '../../utils/mockData'
+import MockData from '../../utils/mockData.jsx'
 import InformesCreation from '../../components/InformesCreation/InformesCreation'
 
 function Informes() {
