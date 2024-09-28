@@ -1,10 +1,40 @@
-import React from 'react'
+import { useState } from 'react'
+import { fetchCreateInforms } from '../../../utils/fetchsData'
+import { urlServer } from '../../../utils/constantURL'
 
 function InformesCreation({ setShowModal }) {
+    const [informsData, setInformsData] = useState({})
+
+    const handleChange = (e) => { 
+        const value = e.target.value
+        const name = e.target.name
+
+        switch(name) {
+            case "informes-mes":
+                setInformsData({...informsData, "Informes_Mes" : value})
+                break;
+            case "informes-category":
+                setInformsData({...informsData, "Informes_Categoria" : value})
+                break;
+            default:
+                break;
+        }
+    }
+
+
+    
+    const createInforms = () => {
+        try {
+            fetchCreateInforms(urlServer, informsData)
+        } catch (error) {
+            console.log("Error en front al createInforms", error);   
+        }
+    }
     
     const closeModal = () => { 
         setShowModal(false)
-     }
+    }
+
     return (
     <div className='informescreation-wrapper'>
         <h2>Análisis</h2>
@@ -14,7 +44,7 @@ function InformesCreation({ setShowModal }) {
             <div className='informes-mes-wrapper'>
                 Selecciona el mes a analizar 
             </div>
-            <select name="informes-mes">
+            <select name="informes-mes" onChange={(e) => handleChange(e)}>
                 <option value={""}>Mes</option>
                 <option value={"1"}>1</option>
                 <option value={"2"}>2</option>
@@ -34,7 +64,7 @@ function InformesCreation({ setShowModal }) {
                 Selecciona categoría de plato
             </div>
 
-            <select className='informes-category' name="plate-category" >
+            <select className='informes-category' name="informes-category" onChange={(e) => handleChange(e)} >
                 <option>Seleccione una opcion</option>
                 <option value={"ENTRADAS"}>ENTRADAS</option>
                 <option value={"FONDOS"}>FONDOS</option>
@@ -48,7 +78,7 @@ function InformesCreation({ setShowModal }) {
 
 
         <div className='informescreation-accept-button-wrapper' >
-            <button className='informescreation-accept-button'>Aceptar</button>
+            <button className='informescreation-accept-button' onClick={() => {createInforms()}}>Aceptar</button>
         </div>
 
 

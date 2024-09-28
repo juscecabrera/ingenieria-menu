@@ -107,3 +107,32 @@ export const createCosts = (urlServer, costsData) => {
     }); 
 
 }
+
+export const fetchCreateInforms = (urlServer, informsData) => { 
+    const payload = {
+        Informes_Mes : informsData.Informes_Mes,
+        Informes_Categoria : informsData.Informes_Categoria,
+    }
+
+    const urlCreateInforms = `${urlServer}/api/informs`
+
+    fetch(urlCreateInforms, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json', 
+            },
+        body: JSON.stringify(payload),     
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Error en la solicitud');
+        }
+        return response.json(); 
+    })
+    .then(data => {
+        console.log("Informes creados correctamente", data)
+    })
+    .catch(error => {
+        console.error('Hubo un problema con la solicitud en fetchData:', error);
+    }); 
+}

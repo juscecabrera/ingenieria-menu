@@ -65,11 +65,8 @@ function DataEntry({ setShowModal, refreshButton }) {
                 break;
             default:
                 break;
-        }
-        
-
-        
-     }
+        }        
+    }
 
   return (
     <div className='dataentry-wrapper'>

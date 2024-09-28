@@ -19,7 +19,6 @@ function Informes() {
 
         {showModal
         ? <div className='informes-modal-wrapper'>
-            {/* <DataEntry setShowModal={setShowModal}/> */}
             <InformesCreation setShowModal={setShowModal} />
             </div>
         : ""
