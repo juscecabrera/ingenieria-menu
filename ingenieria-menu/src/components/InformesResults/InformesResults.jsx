@@ -1,7 +1,7 @@
 import React from 'react'
 
 function InformesResults({ data }) {
-  // const dataTable = data.multiCriterioResults
+  const dataTable = data.multiCriterioResults
 
 
   const dataomnes = data.omnesResult
@@ -20,23 +20,47 @@ function InformesResults({ data }) {
   return (
     <div className='informesresults-wrapper'>
     
+    {/* Agregar una columna de interpretacion a TODOS*/}
+
+
     <div className='informesresults-1'>
         <h3>Omnes</h3>
         <br />
           <table >
             <thead>
-              <th>1</th>
-              <th>2</th>
-              <th>3</th>
-              <th>4</th>
+              <th>Principio</th>
+              <th>Cumple</th>
+              <th>Interpretación</th>
             </thead>
             <tbody>
-              <td>{dataomnes["1 principio"]?.toString()}</td>
-              <td>{dataomnes["2 principio"]?.toString()}</td>
-              <td>{dataomnes["3 principio"]?.toString()}</td>
-              <td>{dataomnes["4 principio"]}</td>
+              <tr>
+                <td>1er principio</td>
+                <td>{dataomnes["1 principio"]?.toString()}</td>
+                <td>Interpretacion</td>
+              </tr>
+              <tr>
+                <td>2do principio</td>
+                <td>{dataomnes["2 principio"]?.toString()}</td>
+                <td>Interpretacion</td>
+
+              </tr>
+
+              <tr>
+                <td>3er principio</td>
+                <td>{dataomnes["3 principio"]?.toString()}</td>
+                <td>Interpretacion</td>
+
+              </tr>
+
+              <tr>
+                <td>4to principio</td>
+                <td>{dataomnes["4 principio"]}</td>
+                <td>Interpretacion</td>
+
+              </tr>
             </tbody>
           </table>
+          <br />
       </div>
       
       <div className='informesresults-2'>
@@ -66,8 +90,7 @@ function InformesResults({ data }) {
 
 
       </div>
-      
-      
+
       <div className='informesresults-3'>
       <h3>ADL</h3>
       <br />
@@ -157,7 +180,8 @@ function InformesResults({ data }) {
       </div>
 
       <div className='informesresults-7'>
-        Miller
+        <h3>Miller</h3>
+        <br />
         <table >
           <thead>
             <th>Plato</th>
@@ -176,17 +200,75 @@ function InformesResults({ data }) {
             ))}
           </tbody>
         </table>
-
-
       </div>
 
 
-    {/* 
+      <div className='informesresults-8'>
+        <h3>Uman</h3>
+        <br />
+        <table >
+            <thead>
+            <th>Plato</th>
+            <th>Margen Unitario</th>
+            <th>Margen Total</th>
+            <th>Categoría Uman</th>
+            </thead>
+            <tbody>
+            {Object.keys(datauman).map((plato) => (
+                <tr key={plato}>
+                  <td>{plato}</td>
+                  <td>{datauman[plato].margenUnitario}</td>
+                  <td>{datauman[plato].margenTotal}</td>
+                  <td>{datauman[plato].Uman}</td>
+                </tr>
+              ))}
+            </tbody>
+        </table>
+      </div>
+
+      <div className='informesresults-9'>
+        <h3>Merrick</h3>
+        <br />
+        <table>
+            <thead>
+            <th>Plato</th>
+            <th>Margen Unitario</th>
+            <th>Margen Total</th>
+            <th>Categoría Uman</th>
+            </thead>
+            <tbody>
+            {Object.keys(datamerrick).map((plato) => (
+                <tr key={plato}>
+                  <td>{plato}</td>
+                  <td>{datamerrick[plato].cantidadVendida}</td>
+                  <td>{datamerrick[plato].margenUnitario}</td>
+                  <td>{datamerrick[plato].Merrick}</td>
+                </tr>
+              ))}
+            </tbody>
+        </table>
+      </div>
+
+      <div className='informesresults-10'>
+        <h3>MultiCriterio</h3>
+        <br />
+        <table >
+          <thead>
+            <th>Plato</th>
+            <th>MultiCriterio</th>
+          </thead>
+          <tbody>
+          {Object.keys(datamultiCriterioFinal).map((plato) => (
+              <tr key={plato}>
+                <td>{plato}</td>
+                <td>{datamultiCriterioFinal[plato]}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
       
-      
-      <div className='informesresults-8'></div>
-      <div className='informesresults-9'></div> */}
-      {/* <table className='informesresults-table'>
+      <table className='informesresults-table'>
         <thead>
           <tr>
             <th>Nombre</th>
@@ -211,7 +293,7 @@ function InformesResults({ data }) {
             </tr>
           )) : ""}
         </tbody>
-      </table> */}
+      </table>
 
 
     </div>

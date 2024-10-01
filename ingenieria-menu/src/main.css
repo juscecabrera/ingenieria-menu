@@ -849,6 +849,9 @@
 .informesresults-wrapper-9 {
   grid-area: 3/3;
 }
+.informesresults-wrapper-10 {
+  grid-area: 4/1;
+}
 .informesresults-wrapper table {
   border: 1px solid black;
   border-collapse: collapse;
