@@ -3,6 +3,11 @@ import '../../main.css'
 import { createPlate } from '../../../utils/fetchsData'
 import { urlServer } from '../../../utils/constantURL'
 
+/**
+ * Falta agregar el Tiempo de preparacion
+ */
+
+
 function DataEntry({ setShowModal, refreshButton }) {
     const [plateData, setPlateData] = useState({})  
 
@@ -118,6 +123,10 @@ function DataEntry({ setShowModal, refreshButton }) {
             <select className='dataentry-input-row-3' name="plate-name" onChange={(e) => handleChange(e)}>
                 <option>Seleccione un plato</option>
                 <option value={"Plato 1"}>Plato 1</option>
+                <option value={"Plato 2"}>Plato 2</option>
+                <option value={"Plato 3"}>Plato 3</option>
+                <option value={"Plato 4"}>Plato 4</option>
+                <option value={"Plato 5"}>Plato 5</option>
             </select>
 
         </div>

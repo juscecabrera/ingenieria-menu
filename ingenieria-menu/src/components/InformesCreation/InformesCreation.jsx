@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { fetchCreateInforms } from '../../../utils/fetchsData'
 import { urlServer } from '../../../utils/constantURL'
 
-function InformesCreation({ setShowModal }) {
+function InformesCreation({ setShowModal, setData }) {
     const [informsData, setInformsData] = useState({})
 
     const handleChange = (e) => { 
@@ -25,7 +25,7 @@ function InformesCreation({ setShowModal }) {
     
     const createInforms = () => {
         try {
-            fetchCreateInforms(urlServer, informsData)
+            fetchCreateInforms(urlServer, informsData, setData)
         } catch (error) {
             console.log("Error en front al createInforms", error);   
         }

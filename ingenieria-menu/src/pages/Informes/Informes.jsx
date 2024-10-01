@@ -1,8 +1,10 @@
 import { useState } from 'react'
 import InformesCreation from '../../components/InformesCreation/InformesCreation'
+import InformesResults from '../../components/InformesResults/InformesResults'
 
 function Informes() {
     const [showModal, setShowModal] = useState(false)
+    const [data, setData] = useState(null)
 
     const handleAddPlate = () => { 
         setShowModal(!showModal)
@@ -19,12 +21,12 @@ function Informes() {
 
         {showModal
         ? <div className='informes-modal-wrapper'>
-            <InformesCreation setShowModal={setShowModal} />
+            <InformesCreation setShowModal={setShowModal} setData={setData} />
             </div>
         : ""
         }
 
-        <p>Esta es data de ejemplo hardcodeada temporal. Aqui ira una tabla con los informes que ingresemos</p> <br></br>
+        {data ? <InformesResults data={data}/> : ""}
        
     </div>
   )

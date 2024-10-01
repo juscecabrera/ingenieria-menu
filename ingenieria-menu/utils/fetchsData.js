@@ -108,7 +108,7 @@ export const createCosts = (urlServer, costsData) => {
 
 }
 
-export const fetchCreateInforms = (urlServer, informsData) => { 
+export const fetchCreateInforms = (urlServer, informsData, setData) => { 
     const payload = {
         Informes_Mes : informsData.Informes_Mes,
         Informes_Categoria : informsData.Informes_Categoria,
@@ -130,7 +130,7 @@ export const fetchCreateInforms = (urlServer, informsData) => {
         return response.json(); 
     })
     .then(data => {
-        console.log("Informes creados correctamente", data)
+        setData(data)
     })
     .catch(error => {
         console.error('Hubo un problema con la solicitud en fetchData:', error);
