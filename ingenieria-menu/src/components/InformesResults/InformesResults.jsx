@@ -1,8 +1,21 @@
 import React from 'react'
 
 function InformesResults({ data }) {
-  const dataTable = data.multiCriterioResults
-  const dataOmnes = data.omnesResult
+  // const dataTable = data.multiCriterioResults
+
+
+  const dataomnes = data.omnesResult
+  const dataBCG = data.BCGResults
+  const dataADL = data.ADLResults 
+  const dataIRP = data.IRPResults
+  const dataIndexPopularidad = data.IndexPopularidadResults
+  const dataCMA = data.CostoMargenAnalysisResults
+  const dataMiller = data.MillerResults
+  const datauman = data.umanResults
+  const datamerrick = data.merrickResults 
+  const datamultiCriterioFinal = data.multiCriterioFinal
+
+
 
   return (
     <div className='informesresults-wrapper'>
@@ -10,7 +23,6 @@ function InformesResults({ data }) {
     <div className='informesresults-1'>
         <h3>Omnes</h3>
         <br />
-        {/* {JSON.stringify(dataOmnes, null, 2)} */}
           <table >
             <thead>
               <th>1</th>
@@ -19,120 +31,162 @@ function InformesResults({ data }) {
               <th>4</th>
             </thead>
             <tbody>
-              <td>{dataOmnes["1 principio"]?.toString()}</td>
-              <td>{dataOmnes["2 principio"]?.toString()}</td>
-              <td>{dataOmnes["3 principio"]?.toString()}</td>
-              <td>{dataOmnes["4 principio"]}</td>
+              <td>{dataomnes["1 principio"]?.toString()}</td>
+              <td>{dataomnes["2 principio"]?.toString()}</td>
+              <td>{dataomnes["3 principio"]?.toString()}</td>
+              <td>{dataomnes["4 principio"]}</td>
             </tbody>
           </table>
       </div>
-    
-    {/* 
+      
       <div className='informesresults-2'>
-        BCG
-        <table >
+        <h3>BCG</h3>
+          <br />
+
+        <table>
           <thead>
-            <th>1</th>
-            <th>2</th>
-            <th>3</th>
+            <tr>
+              <th>Plato</th>
+              <th>Rentabilidad</th>
+              <th>Popularidad</th>
+              <th>BCGCategoria</th>
+            </tr>
           </thead>
           <tbody>
-            <td>1</td>
-            <td>2</td>
-            <td>3</td>
+            {Object.keys(dataBCG).map((plato) => (
+              <tr key={plato}>
+                <td>{plato}</td>
+                <td>{dataBCG[plato].rentabilidad}</td>
+                <td>{dataBCG[plato].popularidad}</td>
+                <td>{dataBCG[plato].BCGCategory}</td>
+              </tr>
+            ))}
           </tbody>
         </table>
 
 
       </div>
+      
+      
       <div className='informesresults-3'>
-        ADL
-        <table >
+      <h3>ADL</h3>
+      <br />
+        <table>
           <thead>
-            <th>1</th>
-            <th>2</th>
-            <th>3</th>
+            <tr>
+              <th>Plato</th>
+              <th>Rentabilidad Categoría</th>
+              <th>Cantidad Vendida Categoría</th>
+            </tr>
           </thead>
           <tbody>
-            <td>1</td>
-            <td>2</td>
-            <td>3</td>
+            {Object.keys(dataADL).map((plato) => (
+              <tr key={plato}>
+                <td>{plato}</td>
+                <td>{dataADL[plato].rentabilidadCategoria}</td>
+                <td>{dataADL[plato].cantidadVendidaCategoria}</td>
+              </tr>
+            ))}
           </tbody>
         </table>
 
 
       </div>
+      
       <div className='informesresults-4'>
-        IRP
+        <h3>IRP</h3>
+        <br />
         <table >
           <thead>
-            <th>1</th>
-            <th>2</th>
-            <th>3</th>
+            <th>Plato</th>
+            <th>IRP</th>
           </thead>
           <tbody>
-            <td>1</td>
-            <td>2</td>
-            <td>3</td>
+          {Object.keys(dataIRP).map((plato) => (
+              <tr key={plato}>
+                <td>{plato}</td>
+                <td>{dataIRP[plato]}</td>
+              </tr>
+            ))}
           </tbody>
         </table>
-
-
       </div>
+
       <div className='informesresults-5'>
-        IndexPopularidad
+      <h3>Index de Popularidad</h3>
+        <br />
         <table >
           <thead>
-            <th>1</th>
-            <th>2</th>
-            <th>3</th>
+            <th>Plato</th>
+            <th>Index de Popularidad</th>
           </thead>
           <tbody>
-            <td>1</td>
-            <td>2</td>
-            <td>3</td>
+          {Object.keys(dataIndexPopularidad).map((plato) => (
+              <tr key={plato}>
+                <td>{plato}</td>
+                <td>{dataIndexPopularidad[plato]}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      
+      <div className='informesresults-6'>
+        <h3>Análisis Costo Margen</h3>
+        <br />
+        <table>
+          <thead>
+            <th>Plato</th>
+            <th>Costo Ponderado</th>
+            <th>Margen Contribucion Ponderado</th>
+            <th>Categoría Costo-Margen</th>
+          </thead>
+          <tbody>
+          {Object.keys(dataCMA).map((plato) => (
+              <tr key={plato}>
+                <td>{plato}</td>
+                <td>{dataCMA[plato].costoPonderado}</td>
+                <td>{dataCMA[plato].margenContribucionPonderado}</td>
+                <td>{dataCMA[plato].costoMargen}</td>
+              </tr>
+            ))}
           </tbody>
         </table>
 
 
       </div>
-      <div className='informesresults-6'>Costo-
-        Margen
-        <table >
-          <thead>
-            <th>1</th>
-            <th>2</th>
-            <th>3</th>
-          </thead>
-          <tbody>
-            <td>1</td>
-            <td>2</td>
-            <td>3</td>
-          </tbody>
-        </table>
 
-
-      </div>
       <div className='informesresults-7'>
         Miller
         <table >
           <thead>
-            <th>1</th>
-            <th>2</th>
-            <th>3</th>
+            <th>Plato</th>
+            <th>Costo de Alimentos</th>
+            <th>Cantidad Vendida</th>
+            <th>Categoría Miller</th>
           </thead>
           <tbody>
-            <td>1</td>
-            <td>2</td>
-            <td>3</td>
+          {Object.keys(dataMiller).map((plato) => (
+              <tr key={plato}>
+                <td>{plato}</td>
+                <td>{dataMiller[plato].costoAlimentos}</td>
+                <td>{dataMiller[plato].cantidadVendidaAtributo}</td>
+                <td>{dataMiller[plato].millerMatrix}</td>
+              </tr>
+            ))}
           </tbody>
         </table>
 
 
       </div>
+
+
+    {/* 
+      
+      
       <div className='informesresults-8'></div>
       <div className='informesresults-9'></div> */}
-      <table className='informesresults-table'>
+      {/* <table className='informesresults-table'>
         <thead>
           <tr>
             <th>Nombre</th>
@@ -157,7 +211,7 @@ function InformesResults({ data }) {
             </tr>
           )) : ""}
         </tbody>
-      </table>
+      </table> */}
 
 
     </div>
