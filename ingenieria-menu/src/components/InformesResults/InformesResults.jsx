@@ -102,9 +102,9 @@ function InformesResults({ data }) {
             <tr>
               <th>Plato</th>
               <th>Rentabilidad Categoría</th>
-              <th>Rentabilidad Puntaje</th>
+              <th>Rentabilidad Unitaria</th>
               <th>Cantidad Vendida Categoría</th>
-              <th>Cantidad Vendida Puntaje</th>
+              <th>Cantidad Vendida</th>
             </tr>
           </thead>
           <tbody>
