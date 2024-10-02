@@ -1,4 +1,6 @@
 import React from 'react'
+import BarChart from '../BarChart/BarChart'
+import ADLMatrixChart from '../ADLMatrixChart/ADLMatrixChart'
 
 function InformesResults({ data }) {
   const dataTable = data.multiCriterioResults
@@ -88,6 +90,7 @@ function InformesResults({ data }) {
           </tbody>
         </table>
 
+            <BarChart inputData={dataBCG} type={'BCG'} />
 
       </div>
 
@@ -99,7 +102,9 @@ function InformesResults({ data }) {
             <tr>
               <th>Plato</th>
               <th>Rentabilidad Categoría</th>
+              <th>Rentabilidad Puntaje</th>
               <th>Cantidad Vendida Categoría</th>
+              <th>Cantidad Vendida Puntaje</th>
             </tr>
           </thead>
           <tbody>
@@ -107,12 +112,15 @@ function InformesResults({ data }) {
               <tr key={plato}>
                 <td>{plato}</td>
                 <td>{dataADL[plato].rentabilidadCategoria}</td>
+                <td>{dataADL[plato].rentabilidadPuntaje}</td>
                 <td>{dataADL[plato].cantidadVendidaCategoria}</td>
+                <td>{dataADL[plato].cantidadVendidaPuntaje}</td>
               </tr>
             ))}
           </tbody>
         </table>
 
+        <ADLMatrixChart adlResults={dataADL}/>
 
       </div>
       
@@ -133,6 +141,8 @@ function InformesResults({ data }) {
             ))}
           </tbody>
         </table>
+
+        <BarChart inputData={dataIRP} type={'IRP'} />
       </div>
 
       <div className='informesresults-5'>
@@ -152,6 +162,9 @@ function InformesResults({ data }) {
             ))}
           </tbody>
         </table>
+
+        <BarChart inputData={dataIndexPopularidad} type={'IRP'} />
+
       </div>
       
       <div className='informesresults-6'>
@@ -176,6 +189,7 @@ function InformesResults({ data }) {
           </tbody>
         </table>
 
+        <BarChart inputData={dataCMA} type={'CMA'} />
 
       </div>
 
@@ -200,6 +214,9 @@ function InformesResults({ data }) {
             ))}
           </tbody>
         </table>
+
+        <BarChart inputData={dataMiller} type={'Miller'} />
+
       </div>
 
 
@@ -224,6 +241,10 @@ function InformesResults({ data }) {
               ))}
             </tbody>
         </table>
+
+
+        <BarChart inputData={datauman} type={'Uman'} />
+
       </div>
 
       <div className='informesresults-9'>
@@ -247,6 +268,9 @@ function InformesResults({ data }) {
               ))}
             </tbody>
         </table>
+
+        <BarChart inputData={datamerrick} type={'Merrick'} />
+
       </div>
 
       <div className='informesresults-10'>
@@ -266,9 +290,8 @@ function InformesResults({ data }) {
             ))}
           </tbody>
         </table>
-      </div>
-      
-      <table className='informesresults-table'>
+
+        <table className='informesresults-table'>
         <thead>
           <tr>
             <th>Nombre</th>
@@ -289,11 +312,21 @@ function InformesResults({ data }) {
               <td>{plato.resultados[2].miller[0]}</td>
               <td>{plato.resultados[3].IRP[0]}</td>
               <td>{plato.resultados[4].IndexPopularidad[0]}</td>
-              <td>{plato.Puntaje_Multicriterio}</td>
+              <td className={plato.Puntaje_Multicriterio >= 12 ? 'informesresults-color-1' : plato.Puntaje_Multicriterio >= 8 ? 'informesresults-color-2' : 'informesresults-color-3' }>{plato.Puntaje_Multicriterio}</td>
             </tr>
           )) : ""}
         </tbody>
       </table>
+
+
+      <p>
+        Bueno: 12-20
+        Regular: 8-11
+        Malo: 5-7
+      </p>
+      </div>
+      
+      
 
 
     </div>
