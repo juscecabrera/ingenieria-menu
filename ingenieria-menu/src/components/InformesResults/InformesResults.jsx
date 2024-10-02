@@ -276,7 +276,7 @@ function InformesResults({ data }) {
       <div className='informesresults-10'>
         <h3>MultiCriterio</h3>
         <br />
-        <table >
+        {/* <table >
           <thead>
             <th>Plato</th>
             <th>MultiCriterio</th>
@@ -289,7 +289,7 @@ function InformesResults({ data }) {
               </tr>
             ))}
           </tbody>
-        </table>
+        </table> */}
 
         <table className='informesresults-table'>
         <thead>

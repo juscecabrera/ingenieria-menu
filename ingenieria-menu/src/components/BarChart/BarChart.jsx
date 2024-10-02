@@ -4,6 +4,10 @@ import * as d3 from "d3";
 const BarChart = ({ inputData, type }) => {
   const chartRef = useRef();
 
+
+    //Creo que la mejor manera de manejar la data es cambiarla directamente desde el controlador (informesFunctions) para no tener que transformarla inncesariamente. Hacerla Chart driven
+
+
     function transformData(inputData, fixedCategories, categoryField) {
         const categoryCounts = Object.fromEntries(fixedCategories.map(category => [category, 0]));
     

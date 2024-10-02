@@ -56,7 +56,7 @@ const ADLMatrixChart = ({ adlResults }) => {
     const xScaleSecondary = d3.scalePoint()
       .domain(rentabilidadCategorias)  
       .range([0, width])
-      .padding(0.5)
+      .padding(0.85)
 
     const yScaleSecondary = d3.scalePoint()
       .domain(cantidadVendidaCategorias)  
@@ -80,16 +80,12 @@ const ADLMatrixChart = ({ adlResults }) => {
     // // Eje X secundario en la parte superior
     svg.append('g')
       .attr('transform', `translate(0, 0)`) // Mover el eje X secundario a la parte superior
-      .call(d3.axisTop(xScaleSecondary)
-        .tickFormat(d3.format(""))
-      );
+      .call(d3.axisTop(xScaleSecondary));
 
     // Eje Y secundario a la derecha
     svg.append('g')
       .attr('transform', `translate(${width}, 0)`) // Mover el eje Y secundario a la derecha
-      .call(d3.axisRight(yScaleSecondary)
-        .tickFormat(d3.format(""))  
-      );
+      .call(d3.axisRight(yScaleSecondary));
 
 
     // Dibujar puntos
