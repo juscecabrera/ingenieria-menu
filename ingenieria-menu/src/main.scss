@@ -11,6 +11,13 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'Nunito';
+    src: url('./assets/fonts/Nunito-Bold.ttf');
+    font-weight: bold;
+    font-style: normal;
+}
+
 
 @import './components/DataEntry/DataEntry';
 @import './components/Setup/Setup';
@@ -18,10 +25,10 @@
 @import './pages/Layout/Layout';
 @import './pages/Layout/LayoutSide';
 @import './components/LayoutSideOption/LayoutSideOption';
-@import './pages/DataEntry/Platos';
 @import './pages/Costs/Costs';
 @import './pages/Informes/Informes';
 @import './components/InformesCreation/InformesCreation';
 @import './components/InformesResults/InformesResults';
 @import './components/NavBar/NavBar';
 @import './components/Filter/Filter';
+@import './pages/DataEntry/Platos';

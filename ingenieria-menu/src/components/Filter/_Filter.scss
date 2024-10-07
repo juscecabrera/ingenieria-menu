@@ -2,12 +2,13 @@
     margin-top: 2rem;
     background-color: #F9F9FA;
     border-radius: 10px;
-    margin-left: 4%;
+    // margin-left: 4%;
     border: 0.3px solid #979797;
     width: 41.5%;
     height: 4rem;
     display: grid;
-    grid-template-columns: 10% 18% 15% 21% 18% 18%;
+    grid-template-columns: 8% 15% 15% 21% 18% 23%;
+    font-size: 16px;
 
     div {
         display: flex;
@@ -26,5 +27,9 @@
 
     div:last-child {
         border-right: none;
+        color: red;
+        p {
+            margin-left: 0.2rem;
+        }
     }
 }

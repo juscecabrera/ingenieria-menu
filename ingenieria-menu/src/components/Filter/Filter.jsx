@@ -1,6 +1,7 @@
 import React from 'react'
 import FilterIcon from '../../assets/svg/FilterIcon.svg'
 import FilterArrow from '../../assets/svg/FilterArrow.svg'
+import ResetIcon from '../../assets/svg/ResetIcon.svg'
 
 
 function Filter() {
@@ -35,6 +36,7 @@ function Filter() {
         </div>
         <div>
             
+            <img src={ResetIcon} alt="filter-reset-icon" />
             <p>Resetear filtro</p>
 
         </div>

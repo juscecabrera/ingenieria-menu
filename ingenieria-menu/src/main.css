@@ -10,6 +10,12 @@
   font-weight: normal;
   font-style: normal;
 }
+@font-face {
+  font-family: "Nunito";
+  src: url("./assets/fonts/Nunito-Bold.ttf");
+  font-weight: bold;
+  font-style: normal;
+}
 .dataentry-wrapper {
   background-color: #fff;
   width: 40%;
@@ -612,68 +618,6 @@
   background-color: rgba(0, 0, 0, 0.1);
 }
 
-.platos-wrapper {
-  border-top: 1px solid black;
-  margin-top: 5%;
-  margin-left: 14%;
-  padding-left: 2rem;
-  padding-top: 2rem;
-  background-color: #F5F6FA;
-  font-family: Nunito;
-}
-.platos-wrapper h2 {
-  font-size: 40px;
-}
-.platos-wrapper .platos-add-button {
-  padding: 0.5rem;
-  margin: 1rem;
-  border-radius: 10px;
-  border: 1px solid black;
-}
-.platos-wrapper .platos-add-button:hover {
-  cursor: pointer;
-  background-color: rgba(0, 0, 0, 0.1);
-}
-.platos-wrapper .platos-table-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.platos-wrapper .platos-table-wrapper img {
-  width: 5%;
-}
-.platos-wrapper .platos-table-wrapper .platos-table {
-  border: 1px solid black;
-  border-collapse: collapse;
-}
-.platos-wrapper .platos-table-wrapper .platos-table thead, .platos-wrapper .platos-table-wrapper .platos-table th, .platos-wrapper .platos-table-wrapper .platos-table td {
-  padding: 0.25rem;
-  border: 1px solid black;
-  text-align: center;
-}
-.platos-wrapper .platos-table-wrapper .platos-table thead button, .platos-wrapper .platos-table-wrapper .platos-table th button, .platos-wrapper .platos-table-wrapper .platos-table td button {
-  width: 5rem;
-  height: 2rem;
-  border-radius: 10px;
-  border: 1px solid black;
-  padding: 0.5rem;
-}
-.platos-wrapper .platos-table-wrapper .platos-table thead button:hover, .platos-wrapper .platos-table-wrapper .platos-table th button:hover, .platos-wrapper .platos-table-wrapper .platos-table td button:hover {
-  cursor: pointer;
-  background-color: rgba(0, 0, 0, 0.1);
-}
-.platos-wrapper .platos-modal-wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.3);
-}
-
 .costs-wrapper {
   border-top: 1px solid black;
   margin-top: 5%;
@@ -946,12 +890,12 @@
   margin-top: 2rem;
   background-color: #F9F9FA;
   border-radius: 10px;
-  margin-left: 4%;
   border: 0.3px solid #979797;
   width: 41.5%;
   height: 4rem;
   display: grid;
-  grid-template-columns: 10% 18% 15% 21% 18% 18%;
+  grid-template-columns: 8% 15% 15% 21% 18% 23%;
+  font-size: 16px;
 }
 .filter-wrapper div {
   display: flex;
@@ -968,4 +912,125 @@
 }
 .filter-wrapper div:last-child {
   border-right: none;
+  color: red;
+}
+.filter-wrapper div:last-child p {
+  margin-left: 0.2rem;
+}
+
+.platos-wrapper {
+  border-top: 1px solid black;
+  margin-top: 5%;
+  margin-left: 14%;
+  padding-left: 2rem;
+  padding-top: 2rem;
+  background-color: #F5F6FA;
+  font-family: Nunito;
+  padding-bottom: 4rem;
+}
+.platos-wrapper h2 {
+  font-size: 40px;
+}
+.platos-wrapper .platos-add-button {
+  padding: 0.5rem;
+  margin: 1rem;
+  border-radius: 10px;
+  border: 1px solid black;
+}
+.platos-wrapper .platos-add-button:hover {
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+.platos-wrapper .platos-table-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.platos-wrapper .platos-table-wrapper img {
+  width: 5%;
+}
+.platos-wrapper .platos-table-wrapper .platos-table {
+  border-radius: 10px !important;
+  border: 0.4px solid #B9B9B9;
+  border-collapse: separate;
+  background-color: #FFFFFF;
+  border-spacing: 0;
+}
+.platos-wrapper .platos-table-wrapper .platos-table thead {
+  text-align: center;
+}
+.platos-wrapper .platos-table-wrapper .platos-table thead tr th {
+  font-family: "Nunito";
+  font-weight: bold;
+  padding: 0.85rem 2rem;
+  border-bottom: 0.6px solid rgba(213, 213, 213, 0.616);
+}
+.platos-wrapper .platos-table-wrapper .platos-table tbody {
+  background-color: #FFFFFF;
+}
+.platos-wrapper .platos-table-wrapper .platos-table tbody tr td {
+  border: none;
+  border-bottom: 0.4px solid rgba(151, 151, 151, 0.467);
+  text-align: center;
+  padding: 0.85rem 2rem;
+}
+.platos-wrapper .platos-table-wrapper .platos-table tbody tr td .buttons-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.platos-wrapper .platos-table-wrapper .platos-table tbody tr td .buttons-wrapper .delete-button, .platos-wrapper .platos-table-wrapper .platos-table tbody tr td .buttons-wrapper .update-button {
+  width: 30%;
+}
+.platos-wrapper .platos-table-wrapper .platos-table tbody tr td button {
+  width: 5rem;
+  height: 2rem;
+  border-radius: 10px;
+  border: 1px solid black;
+  padding: 0.5rem;
+}
+.platos-wrapper .platos-table-wrapper .platos-table tbody tr td button:hover {
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+.platos-wrapper .platos-table-wrapper .platos-table tbody tr:last-child td {
+  border-bottom: none;
+  border-radius: 10px !important;
+}
+.platos-wrapper .platos-options-wrapper {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 2rem;
+}
+.platos-wrapper .platos-options-wrapper p {
+  font-weight: bold;
+}
+.platos-wrapper .platos-options-wrapper .platos-options-buttons-wrapper .prev-button {
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+.platos-wrapper .platos-options-wrapper .platos-options-buttons-wrapper .prev-button .prev-button-arrow {
+  rotate: 180deg;
+}
+.platos-wrapper .platos-options-wrapper .platos-options-buttons-wrapper .next-button {
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+.platos-wrapper .platos-options-wrapper .platos-options-buttons-wrapper button {
+  border: 1px solid #979797;
+  height: 3rem;
+  width: 3rem;
+}
+.platos-wrapper .platos-modal-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
 }/*# sourceMappingURL=main.css.map */
