@@ -5,6 +5,7 @@ import { urlServer } from '../../../utils/constantURL.js'
 import { fetchPlates } from '../../../utils/fetchsData'
 import SpinnerSVG from '../../assets/svg/spinnerSVG.svg'
 import PlatosTable from '../../components/PlatosTable/PlatosTable.jsx'
+import Filter from '../../components/Filter/Filter.jsx'
 
 function Platos() {
   const [showModal, setShowModal] = useState(false)
@@ -33,6 +34,8 @@ function Platos() {
     return (
     <div className='platos-wrapper'>
         <h2>Platos</h2>
+
+        <Filter />
 
         <button className='platos-add-button' onClick={() => handleAddPlate()}>Agregar plato</button>
 

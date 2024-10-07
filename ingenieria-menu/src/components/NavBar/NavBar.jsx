@@ -9,7 +9,7 @@ function NavBar() {
             {/* <div className='nav-profile'> </div> */}
             <img className='nav-profile'src={Circle} alt="nav-circle" />
             
-            <p>John Doe</p>
+            <p>John Doe <br /> Admin</p>
             <div className="nav-arrow-div">
                 <img src={Arrow}  className="nav-arrow-svg"></img>
             </div>

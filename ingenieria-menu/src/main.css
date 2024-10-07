@@ -615,8 +615,11 @@
 .platos-wrapper {
   border-top: 1px solid black;
   margin-top: 5%;
-  margin-left: 10%;
-  padding-left: 4rem;
+  margin-left: 14%;
+  padding-left: 2rem;
+  padding-top: 2rem;
+  background-color: #F5F6FA;
+  font-family: Nunito;
 }
 .platos-wrapper h2 {
   font-size: 40px;
@@ -901,25 +904,28 @@
 .navbar-wrapper {
   background-color: white;
   position: fixed;
-  left: 14%;
+  left: 14.5%;
   width: 86%;
   height: 10%;
   top: 0;
   bottom: 0;
   display: grid;
   grid-template-columns: 85% 15%;
+  font-family: Nunito;
 }
 .navbar-wrapper .nav-wrapper {
   grid-column: 2;
   height: 100%;
   display: flex;
+  align-items: center;
 }
 .navbar-wrapper .nav-wrapper .nav-profile {
-  background-color: none;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-family: Arial, Helvetica, sans-serif;
+  width: 20%;
+  height: 50%;
+  margin-right: 1rem;
+}
+.navbar-wrapper .nav-wrapper p {
+  line-height: 1.5rem;
 }
 .navbar-wrapper .nav-wrapper .nav-arrow-div {
   width: 2%;
@@ -934,4 +940,32 @@
 }
 .navbar-wrapper .nav-wrapper .nav-arrow-div .nav-arrow-svg {
   transition: 0.5s ease;
+}
+
+.filter-wrapper {
+  margin-top: 2rem;
+  background-color: #F9F9FA;
+  border-radius: 10px;
+  margin-left: 4%;
+  border: 0.3px solid #979797;
+  width: 41.5%;
+  height: 4rem;
+  display: grid;
+  grid-template-columns: 10% 18% 15% 21% 18% 18%;
+}
+.filter-wrapper div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem;
+  height: 100%;
+  width: 100%;
+  border-right: 0.3px solid #979797;
+  white-space: nowrap;
+}
+.filter-wrapper div img {
+  margin-left: 0.2rem;
+}
+.filter-wrapper div:last-child {
+  border-right: none;
 }/*# sourceMappingURL=main.css.map */
