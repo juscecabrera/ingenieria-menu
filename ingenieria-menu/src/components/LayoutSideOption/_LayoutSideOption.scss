@@ -1,24 +1,37 @@
 .layoutside-svg-wrapper {
     display: grid;
-    grid-template-columns: 30% 70%;
-    border-bottom: 1px solid black;
-    padding: 1rem 2rem;
+    grid-template-columns: 15% 85%;
+    width: 100%;
+    height: 7%;
+    // padding: 1rem;
+    gap: 1rem;
+    padding-left: 3rem;
+    // border-bottom: 1px solid black;
+    
+    .layoutside-svg-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+        .layoutside-svg {
+            grid-column: 1;
+            width: 100%;
+            height: 55%;
+        }
 
-    .layoutside-svg {
-        grid-column: 1;
-        width: 100%;
-        height: 100%;
     }
     
     .layoutside-p {
         grid-column: 2;
-        margin-left: 1rem;
+        // margin-left: 1rem;
         display: flex;
         flex-direction: row;
         justify-content: flex-start;
         align-items: center;
         p {
-            font-size: 25px;
+            font-family: Nunito;
+            font-size: 17px;
+            letter-spacing: 0.3px;
         }
 
     }

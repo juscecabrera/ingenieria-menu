@@ -15,14 +15,16 @@ function LayoutSideOption({ svg, text }) {
       navigate('/costs')
     } else {
       navigate('/informes')
-
       //mostrar InformesPopup
     }
   }
   
   return (
     <div onClick={() => {handleLayoutClick()}} className='layoutside-svg-wrapper'>
+      <div  className='layoutside-svg-container'>
         <img src={svg} className='layoutside-svg'/>
+
+      </div>
         <div className='layoutside-p'>
           <p>{text}</p>
 
