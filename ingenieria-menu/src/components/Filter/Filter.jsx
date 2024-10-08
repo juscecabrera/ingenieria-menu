@@ -32,25 +32,25 @@ function Filter() {
             <img src={FilterIcon} alt="filter-icon" />
         </div>
 
-        <div className='filter-div'>
+        {/* <div className='filter-div'>
             <p>
                 Filtrar por
             </p>
-        </div>
+        </div> */}
 
         <div className='filter-div'>
             <p>Fecha</p>
             <img src={FilterArrow} alt="filter-arrow" />
         </div>
         
-        <div className='filter-div'>
+        <div className='filter-div' onClick={() => handleCategoryFilter()}>
             <p>Categoría</p>
-            <img src={FilterArrow} alt="filter-arrow" onClick={() => handleCategoryFilter()}/>
+            <img src={FilterArrow} alt="filter-arrow"/>
+        </div>
             {filtersView.category 
             ? <FilterPopUp setFilter={setFilter} filter={filter} setFiltersView={setFiltersView}/>  
             : ''
             }
-        </div>
         <div className='filter-div'>
             
             <p>Precio venta</p>

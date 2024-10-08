@@ -70,12 +70,22 @@
                             display: flex;
                             justify-content: space-between;
                             align-items: center;
-                            // background-color: red;
 
                             .delete-button, .update-button {
                                 width: 30%;
                             }
+                            
+                            .delete-button:hover {
+                                fill: rgb(255,0,0);
+                                cursor: pointer;
+                            }
+                            
+                            .update-button:hover {
+                                fill: gray;
+                                cursor: pointer;
+                            }
                         }
+
                         button {
                             width: 5rem;
                             height: 2rem;
@@ -88,7 +98,6 @@
                             background-color: rgba(0, 0, 0, 0.1);
                         }
                     }
-                    
                 }
                 tr:last-child {
                     td {

@@ -849,7 +849,7 @@
   background-color: white;
   position: absolute;
   left: 14.5%;
-  width: 86%;
+  width: 85.5%;
   height: 10%;
   top: 0;
   bottom: 0;
@@ -919,6 +919,19 @@
 }
 .filter-wrapper .filter-div:last-child p {
   margin-left: 0.2rem;
+}
+.filter-wrapper .filter-div:last-child:hover {
+  background-color: #f4f0f0;
+  border-radius: 10px;
+}
+.filter-wrapper .filter-div:first-child:hover {
+  background-color: #f4f0f0;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+.filter-wrapper .filter-div:hover {
+  cursor: pointer;
+  background-color: #f4f0f0;
 }
 
 .filter-popup-wrapper {
@@ -1048,6 +1061,14 @@
 }
 .platos-wrapper .platos-table-wrapper .platos-table tbody tr td .buttons-wrapper .delete-button, .platos-wrapper .platos-table-wrapper .platos-table tbody tr td .buttons-wrapper .update-button {
   width: 30%;
+}
+.platos-wrapper .platos-table-wrapper .platos-table tbody tr td .buttons-wrapper .delete-button:hover {
+  fill: rgb(255, 0, 0);
+  cursor: pointer;
+}
+.platos-wrapper .platos-table-wrapper .platos-table tbody tr td .buttons-wrapper .update-button:hover {
+  fill: gray;
+  cursor: pointer;
 }
 .platos-wrapper .platos-table-wrapper .platos-table tbody tr td button {
   width: 5rem;
