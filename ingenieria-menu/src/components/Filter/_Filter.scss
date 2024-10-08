@@ -6,11 +6,13 @@
     border: 0.3px solid #979797;
     width: 41.5%;
     height: 4rem;
-    display: grid;
-    grid-template-columns: 8% 15% 15% 21% 18% 23%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
     font-size: 16px;
 
-    div {
+    .filter-div {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -25,7 +27,7 @@
         }
     }
 
-    div:last-child {
+    .filter-div:last-child {
         border-right: none;
         color: red;
         p {
@@ -33,3 +35,6 @@
         }
     }
 }
+
+
+@import './FilterPopUp';    

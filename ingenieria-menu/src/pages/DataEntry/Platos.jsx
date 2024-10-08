@@ -74,7 +74,7 @@ function Platos() {
         
 
       <div className='platos-options-wrapper'>
-        <p>Showing {(currentPage - 1) * itemsPerPage + 1}-{Math.min(currentPage * itemsPerPage, platesData.length)} of {platesData.length}</p>
+        <p>Mostrando {(currentPage - 1) * itemsPerPage + 1}-{Math.min(currentPage * itemsPerPage, platesData.length)} of {platesData.length}</p>
 
         <div className='platos-options-buttons-wrapper'>
           <button className='prev-button' onClick={handlePrevPage} disabled={currentPage === 1}>
