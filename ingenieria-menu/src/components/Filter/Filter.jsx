@@ -36,7 +36,9 @@ function Filter({ setLoading, fetchPlates, setPlatesData, urlServer }) {
             'precio' : null
         })
 
-        applyFilter()
+        setFiltersView(null)
+        setLoading(true)
+        fetchPlates(urlServer, setPlatesData, setLoading)
     }
 
     const applyFilter = () => { 
@@ -61,7 +63,17 @@ function Filter({ setLoading, fetchPlates, setPlatesData, urlServer }) {
         </div> */}
 
         <div className='filter-div' onClick={() => handleCategoryFilter('date')}>
-            <p>Fecha</p>
+            <p>
+                {filter.year
+                ? (
+                    filter.month ? `${filter.month}-${filter.year}` : filter.year
+                )
+                : (
+                    filter.month ? filter.month : 'Fecha'
+                )}
+                
+
+            </p>
             <img src={FilterArrow} alt="filter-arrow" />
         </div>
             {filtersView === 'date'
@@ -74,7 +86,12 @@ function Filter({ setLoading, fetchPlates, setPlatesData, urlServer }) {
 
 
         <div className='filter-div' onClick={() => handleCategoryFilter('category')}>
-            <p>Categoría</p>
+            <p>
+                {filter.category
+                ? filter.category
+                : 'Categoría'
+                }
+            </p>
             <img src={FilterArrow} alt="filter-arrow"/>
         </div>
             {filtersView === 'category' 

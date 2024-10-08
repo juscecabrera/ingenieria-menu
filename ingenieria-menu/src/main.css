@@ -582,7 +582,7 @@
   width: 70%;
 }
 
-.layoutside-svg-wrapper {
+.layoutside-svg-wrapper, .layoutside-svg-wrapper-active {
   display: grid;
   grid-template-columns: 15% 85%;
   width: 100%;
@@ -590,24 +590,24 @@
   gap: 1rem;
   padding-left: 3rem;
 }
-.layoutside-svg-wrapper .layoutside-svg-container {
+.layoutside-svg-wrapper .layoutside-svg-container, .layoutside-svg-wrapper-active .layoutside-svg-container {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.layoutside-svg-wrapper .layoutside-svg-container .layoutside-svg {
+.layoutside-svg-wrapper .layoutside-svg-container .layoutside-svg, .layoutside-svg-wrapper-active .layoutside-svg-container .layoutside-svg {
   grid-column: 1;
   width: 100%;
   height: 55%;
 }
-.layoutside-svg-wrapper .layoutside-p {
+.layoutside-svg-wrapper .layoutside-p, .layoutside-svg-wrapper-active .layoutside-p {
   grid-column: 2;
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
 }
-.layoutside-svg-wrapper .layoutside-p p {
+.layoutside-svg-wrapper .layoutside-p p, .layoutside-svg-wrapper-active .layoutside-p p {
   font-family: Nunito;
   font-size: 17px;
   letter-spacing: 0.3px;
@@ -616,6 +616,21 @@
 .layoutside-svg-wrapper:hover {
   cursor: pointer;
   background-color: rgba(0, 0, 0, 0.1);
+}
+
+.layoutside-svg-wrapper-active {
+  background-color: #4880FF;
+}
+.layoutside-svg-wrapper-active .layoutside-p p {
+  color: white;
+}
+
+.layoutside-svg-wrapper-active:hover {
+  background-color: rgba(80, 132, 253, 0.8941176471);
+  cursor: pointer;
+}
+.layoutside-svg-wrapper-active:hover .layoutside-p p {
+  color: white;
 }
 
 .costs-wrapper {
