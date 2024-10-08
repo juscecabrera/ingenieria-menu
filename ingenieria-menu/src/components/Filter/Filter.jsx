@@ -11,7 +11,7 @@ Me falta agregar toda la logica en el front y en el back de los filtros
 Me falta agregar los filtros como tal 
 */ 
 
-function Filter() {
+function Filter({ setLoading, fetchPlates, setPlatesData, urlServer }) {
     const [filter, setFilter] = useState({
         'month' : null,
         'year' : null,
@@ -26,6 +26,26 @@ function Filter() {
         } else {
             setFiltersView(name)
         }
+    }
+
+    const handleReset = () => { 
+        setFilter({
+            'month' : null,
+            'year' : null,
+            'category': null,
+            'precio' : null
+        })
+
+        applyFilter()
+    }
+
+    const applyFilter = () => { 
+        const mesPlato = filter.month
+        const yearPlato = filter.year
+        const categoryFilter = filter.category
+
+        setLoading(true)
+        fetchPlates(urlServer, setPlatesData, setLoading, mesPlato, yearPlato, categoryFilter)
     }
 
   return (
@@ -45,8 +65,9 @@ function Filter() {
             <img src={FilterArrow} alt="filter-arrow" />
         </div>
             {filtersView === 'date'
-            ? <FechaPopUp setFilter={setFilter} filter={filter} setFiltersView={setFiltersView} />
-            : ""}
+            ? <FechaPopUp setFilter={setFilter} filter={filter} setFiltersView={setFiltersView} applyFilter={applyFilter}/>
+            : ''
+            }
 
             
 
@@ -57,7 +78,7 @@ function Filter() {
             <img src={FilterArrow} alt="filter-arrow"/>
         </div>
             {filtersView === 'category' 
-            ? <FilterPopUp setFilter={setFilter} filter={filter} setFiltersView={setFiltersView} />  
+            ? <FilterPopUp setFilter={setFilter} filter={filter} setFiltersView={setFiltersView} applyFilter={applyFilter}/>  
             : ''
             }
         <div className='filter-div'>
@@ -65,7 +86,7 @@ function Filter() {
             <p>Precio venta</p>
 
         </div>
-        <div className='filter-div'>
+        <div className='filter-div' onClick={() => handleReset()}>
             
             <img src={ResetIcon} alt="filter-reset-icon" />
             <p>Resetear filtro</p>

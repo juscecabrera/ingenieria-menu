@@ -1,19 +1,42 @@
 
-export const fetchPlates = (urlServer, setPlatesData, setLoading) => {
-    fetch(`${urlServer}/api/plates`)
-    .then(response => {
-      if (!response.ok) {
-          throw new Error('Error en la solicitud');
-      }
-      return response.json(); 
-    })
-    .then(data => {
-        setPlatesData(data)
-        setLoading(false)
-    })
-    .catch(error => {
-    console.error('Hubo un problema con la solicitud en fetchData:', error);
-    }); 
+export const fetchPlates = (urlServer, setPlatesData, setLoading, mesPlato, yearPlato, categoria) => {
+    // Crear la URL con parámetros
+    const url = new URL(`${urlServer}/api/plates`);
+
+    // Agregar los parámetros si están presentes
+    if (mesPlato) {
+        url.searchParams.append('mesPlato', mesPlato);
+    }
+
+    if (yearPlato) {
+        url.searchParams.append('yearPlato', yearPlato)
+    }
+
+    if (categoria) {
+        url.searchParams.append('categoria', categoria);
+    }
+
+    // setLoading(true)
+    
+    // Hacer la solicitud con la URL que incluye los parámetros
+    fetch(url)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Error en la solicitud');
+            }
+            return response.json();
+        })
+        .then(data => {
+            setPlatesData(data);  
+            setLoading(false)    // Cambiar el estado de carga
+            // Guardar los datos obtenidos
+        })
+        .catch(error => {
+            console.error('Hubo un problema con la solicitud en fetchPlates:', error);
+        })
+        // .finally(() => {
+        //     setLoading(false)    // Cambiar el estado de carga
+        // });
 }
 
 export const createPlate = (urlServer, plateData) => {

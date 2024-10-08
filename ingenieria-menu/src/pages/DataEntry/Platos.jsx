@@ -58,7 +58,7 @@ function Platos() {
     <div className='platos-wrapper'>
         <h2>Platos</h2>
 
-        <Filter />
+        <Filter setLoading= {setLoading} fetchPlates= {fetchPlates} setPlatesData={setPlatesData} urlServer={urlServer}/>
 
         <button className='platos-add-button' onClick={() => handleAddPlate()}>Agregar plato</button>
 

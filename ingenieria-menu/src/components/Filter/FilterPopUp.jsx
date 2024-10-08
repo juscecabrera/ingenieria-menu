@@ -1,6 +1,6 @@
 import React from 'react'
 
-function FilterPopUp({ setFilter, filter, setFiltersView }) {
+function FilterPopUp({ setFilter, filter, setFiltersView, applyFilter }) {
 
     const handleFilterSelection = (e) => { 
         setFilter({...filter, 'category': e.target.value})
@@ -8,7 +8,8 @@ function FilterPopUp({ setFilter, filter, setFiltersView }) {
     
     const handleApplyButton = () => { 
         setFiltersView(null)
-        alert('triggerear el fetch otra vez')
+        applyFilter()
+        // alert('triggerear el fetch otra vez')
     }
 
     return (
@@ -18,31 +19,31 @@ function FilterPopUp({ setFilter, filter, setFiltersView }) {
         <div className='options-wrapper'>
             <button 
                 onClick={(e) => handleFilterSelection(e)} 
-                value={'Fondos'} 
-                className={filter.category === 'Fondos' ? 'options-button active' : 'options-button'}
+                value='FONDOS' 
+                className={filter.category === 'FONDOS' ? 'options-button active' : 'options-button'}
             >Fondos
             </button>
         
             <button
             onClick={(e) => handleFilterSelection(e)}
-            value='Entradas'
-            className={filter.category === 'Entradas' ? 'options-button active' : 'options-button'}
+            value='ENTRADAS'
+            className={filter.category === 'ENTRADAS' ? 'options-button active' : 'options-button'}
             >
             Entradas
             </button>
 
             <button
             onClick={(e) => handleFilterSelection(e)}
-            value='Postres'
-            className={filter.category === 'Postres' ? 'options-button active' : 'options-button'}
+            value='POSTRES'
+            className={filter.category === 'POSTRES' ? 'options-button active' : 'options-button'}
             >
             Postres
             </button>
 
             <button
             onClick={(e) => handleFilterSelection(e)}
-            value='Bebidas'
-            className={filter.category === 'Bebidas' ? 'options-button active' : 'options-button'}
+            value='BEBIDAS'
+            className={filter.category === 'BEBIDAS' ? 'options-button active' : 'options-button'}
             >
             Bebidas
             </button>

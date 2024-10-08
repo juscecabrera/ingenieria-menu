@@ -1,6 +1,6 @@
 import React from 'react'
 
-function FechaPopUp({ setFilter, filter, setFiltersView }) {
+function FechaPopUp({ setFilter, filter, setFiltersView, applyFilter }) {
     const handleFilterSelection = (e, type) => {
         if (type === 'year') {
             setFilter({...filter, 'year': e.target.value})
@@ -12,7 +12,8 @@ function FechaPopUp({ setFilter, filter, setFiltersView }) {
     
     const handleApplyButton = () => { 
         setFiltersView(null)
-        alert('triggerear el fetch otra vez')
+        applyFilter()
+        // alert('triggerear el fetch otra vez')
     }
   
   
