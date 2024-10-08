@@ -955,6 +955,9 @@
 }
 .filter-popup-wrapper button:hover {
   cursor: pointer;
+  background-color: rgba(80, 132, 253, 0.8941176471);
+  transition: 0.25s;
+  color: white;
 }
 .filter-popup-wrapper p {
   padding: 1.5rem;
@@ -994,7 +997,17 @@
 .filter-popup-wrapper .filter-apply-button-wrapper .apply-button {
   color: white;
   background-color: #4880FF;
-  height: 3rem;
+  width: 12rem;
+  height: 2.5rem;
+  border-radius: 15px;
+  border: 1px solid #979797;
+  font-family: Nunito;
+  font-size: 16px;
+}
+.filter-popup-wrapper .filter-apply-button-wrapper .apply-button:hover {
+  cursor: pointer;
+  background-color: rgba(80, 132, 253, 0.8941176471);
+  transition: 0.2s;
 }
 
 .platos-wrapper {
@@ -1011,14 +1024,20 @@
   font-size: 40px;
 }
 .platos-wrapper .platos-add-button {
-  padding: 0.5rem;
   margin: 1rem;
-  border-radius: 10px;
-  border: 1px solid black;
+  color: white;
+  background-color: #4880FF;
+  width: 12rem;
+  height: 2.5rem;
+  border-radius: 15px;
+  border: 1px solid #979797;
+  font-family: Nunito;
+  font-size: 16px;
 }
 .platos-wrapper .platos-add-button:hover {
   cursor: pointer;
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: rgba(80, 132, 253, 0.8941176471);
+  transition: 0.2s;
 }
 .platos-wrapper .platos-table-wrapper {
   display: flex;
@@ -1063,12 +1082,12 @@
   width: 30%;
 }
 .platos-wrapper .platos-table-wrapper .platos-table tbody tr td .buttons-wrapper .delete-button:hover {
-  fill: rgb(255, 0, 0);
   cursor: pointer;
+  fill: rgb(255, 0, 0);
 }
 .platos-wrapper .platos-table-wrapper .platos-table tbody tr td .buttons-wrapper .update-button:hover {
-  fill: gray;
   cursor: pointer;
+  fill: gray;
 }
 .platos-wrapper .platos-table-wrapper .platos-table tbody tr td button {
   width: 5rem;
@@ -1120,4 +1139,88 @@
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.3);
+}
+
+.fecha-popup-wrapper {
+  background-color: white;
+  filter: drop-shadow(0px 4px 61px rgba(169, 169, 169, 0.366));
+  font-family: Nunito;
+  width: 25%;
+  height: 42%;
+  border-radius: 10px;
+  position: absolute;
+  top: 30%;
+  display: grid;
+  grid-template-rows: 17% 62% 21%;
+}
+.fecha-popup-wrapper p {
+  padding: 1.5rem;
+  font-weight: bold;
+}
+.fecha-popup-wrapper button {
+  width: 4rem;
+  height: 2.5rem;
+  border-radius: 15px;
+  border: 1px solid #979797;
+  background-color: white;
+  font-family: Nunito;
+  font-size: 16px;
+}
+.fecha-popup-wrapper button:hover {
+  cursor: pointer;
+  background-color: rgba(80, 132, 253, 0.8941176471);
+  transition: 0.25s;
+  color: white;
+}
+.fecha-popup-wrapper .fecha-popup-cols-wrapper {
+  display: grid;
+  grid-template-columns: 24.75% 1% 24.75% 24.75% 24.75%;
+  padding: 1rem 0;
+  border-bottom: 0.4px solid rgba(151, 151, 151, 0.3);
+  border-top: 0.4px solid rgba(151, 151, 151, 0.3);
+}
+.fecha-popup-wrapper .fecha-popup-cols-wrapper .fecha-popup-vline {
+  width: 0.4px;
+  margin: -1rem 0;
+  background-color: #979797;
+  opacity: 50%;
+}
+.fecha-popup-wrapper .fecha-popup-cols-wrapper .fecha-popup-col1,
+.fecha-popup-wrapper .fecha-popup-cols-wrapper .fecha-popup-col3,
+.fecha-popup-wrapper .fecha-popup-cols-wrapper .fecha-popup-col4,
+.fecha-popup-wrapper .fecha-popup-cols-wrapper .fecha-popup-col5 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+.fecha-popup-wrapper .fecha-popup-cols-wrapper .fecha-popup-col1 .active,
+.fecha-popup-wrapper .fecha-popup-cols-wrapper .fecha-popup-col3 .active,
+.fecha-popup-wrapper .fecha-popup-cols-wrapper .fecha-popup-col4 .active,
+.fecha-popup-wrapper .fecha-popup-cols-wrapper .fecha-popup-col5 .active {
+  background-color: #4880FF;
+  color: white;
+}
+.fecha-popup-wrapper .fecha-apply-button-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 1rem 0;
+}
+.fecha-popup-wrapper .fecha-apply-button-wrapper button {
+  color: white;
+  background-color: #4880FF;
+  width: 12rem;
+  height: 2.5rem;
+  border-radius: 15px;
+  border: 1px solid #979797;
+  font-family: Nunito;
+  font-size: 16px;
+}
+.fecha-popup-wrapper .fecha-apply-button-wrapper button:hover {
+  cursor: pointer;
+  background-color: rgba(80, 132, 253, 0.8941176471);
+  transition: 0.2s;
 }/*# sourceMappingURL=main.css.map */

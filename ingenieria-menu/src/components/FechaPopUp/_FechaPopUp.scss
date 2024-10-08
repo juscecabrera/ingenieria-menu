@@ -1,0 +1,96 @@
+@mixin button-inactive {
+    width: 4rem;
+    height: 2.5rem;
+    border-radius: 15px;
+    border: 1px solid #979797;
+    background-color: white;
+    font-family: Nunito;
+    font-size: 16px;
+    &:hover {
+        cursor: pointer;
+        background-color: #5084fde4;
+        transition: 0.25s;
+        color: white;
+    }
+}
+
+
+
+.fecha-popup-wrapper {
+    background-color: white;
+    filter: drop-shadow(0px 4px 61px rgba(169, 169, 169, 0.366));
+    font-family: Nunito;
+    width: 25%;
+    height: 42%;
+    border-radius: 10px;
+    position: absolute;
+    top: 30%;
+    display: grid;
+    grid-template-rows: 17% 62% 21%;
+
+    p {
+        padding: 1.5rem;
+        font-weight: bold;
+    }
+
+    button {
+        @include button-inactive();
+    }
+
+
+    .fecha-popup-cols-wrapper {
+        display: grid;
+        grid-template-columns: 24.75% 1% 24.75% 24.75% 24.75%;
+        padding: 1rem 0;
+        border-bottom: 0.4px solid rgba(151, 151, 151, 0.3);
+        border-top: 0.4px solid  rgba(151, 151, 151, 0.3);
+
+        .fecha-popup-vline {
+            width: 0.4px;
+            margin: -1rem 0;
+            background-color: #979797;
+            opacity: 50%;
+        }
+        .fecha-popup-col1,
+        .fecha-popup-col3,
+        .fecha-popup-col4,
+        .fecha-popup-col5 {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 0.7rem;
+            .active {
+                background-color: #4880FF;
+                color: white;
+            }
+        }
+    }
+
+    .fecha-apply-button-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        padding: 1rem 0;
+        // margin-top: 1.25rem;
+
+        button {
+            color: white;
+            background-color: #4880FF;
+            width: 12rem;
+            height: 2.5rem;
+            border-radius: 15px;
+            border: 1px solid #979797;
+            font-family: Nunito;
+            font-size: 16px;
+        
+            &:hover {
+                cursor: pointer;
+                background-color: #5084fde4;
+                transition: 0.2s;
+            }
+        
+        }
+    }
+}

@@ -3,6 +3,7 @@ import FilterIcon from '../../assets/svg/FilterIcon.svg'
 import FilterArrow from '../../assets/svg/FilterArrow.svg'
 import ResetIcon from '../../assets/svg/ResetIcon.svg'
 import FilterPopUp from './FilterPopUp'
+import FechaPopUp from '../FechaPopUp/FechaPopUp'
 
 
 /*
@@ -12,18 +13,19 @@ Me falta agregar los filtros como tal
 
 function Filter() {
     const [filter, setFilter] = useState({
-        'date' : null,
+        'month' : null,
+        'year' : null,
         'category': null,
         'precio' : null
     })
-    const [filtersView, setFiltersView] = useState({
-        'date' : null,
-        'category' : null,
-        'precio' : null
-    })
+    const [filtersView, setFiltersView] = useState(null)
 
-    const handleCategoryFilter = () => { 
-        setFiltersView({...filtersView, 'category' : !filtersView.category})
+    const handleCategoryFilter = (name) => { 
+        if (filtersView === name) {
+            setFiltersView(null)
+        } else {
+            setFiltersView(name)
+        }
     }
 
   return (
@@ -38,17 +40,24 @@ function Filter() {
             </p>
         </div> */}
 
-        <div className='filter-div'>
+        <div className='filter-div' onClick={() => handleCategoryFilter('date')}>
             <p>Fecha</p>
             <img src={FilterArrow} alt="filter-arrow" />
         </div>
-        
-        <div className='filter-div' onClick={() => handleCategoryFilter()}>
+            {filtersView === 'date'
+            ? <FechaPopUp setFilter={setFilter} filter={filter} setFiltersView={setFiltersView} />
+            : ""}
+
+            
+
+
+
+        <div className='filter-div' onClick={() => handleCategoryFilter('category')}>
             <p>Categoría</p>
             <img src={FilterArrow} alt="filter-arrow"/>
         </div>
-            {filtersView.category 
-            ? <FilterPopUp setFilter={setFilter} filter={filter} setFiltersView={setFiltersView}/>  
+            {filtersView === 'category' 
+            ? <FilterPopUp setFilter={setFilter} filter={filter} setFiltersView={setFiltersView} />  
             : ''
             }
         <div className='filter-div'>

@@ -1,13 +1,13 @@
 import React from 'react'
 
-function FilterPopUp({ setFilter, filter, setFiltersView, filtersView }) {
+function FilterPopUp({ setFilter, filter, setFiltersView }) {
 
     const handleFilterSelection = (e) => { 
         setFilter({...filter, 'category': e.target.value})
     }
     
     const handleApplyButton = () => { 
-        setFiltersView({...filtersView, 'category' : false})
+        setFiltersView(null)
         alert('triggerear el fetch otra vez')
     }
 
@@ -53,8 +53,8 @@ function FilterPopUp({ setFilter, filter, setFiltersView, filtersView }) {
 
         <div className='filter-apply-button-wrapper'>
             <button className='apply-button' onClick={() => handleApplyButton()}>Aplicar</button>
-
         </div>
+
     </div>
   )
 }

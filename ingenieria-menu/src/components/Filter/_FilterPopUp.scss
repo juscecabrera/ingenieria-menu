@@ -1,3 +1,21 @@
+@mixin button-blue {
+    color: white;
+    background-color: #4880FF;
+    width: 12rem;
+    height: 2.5rem;
+    border-radius: 15px;
+    border: 1px solid #979797;
+    font-family: Nunito;
+    font-size: 16px;
+
+    &:hover {
+        cursor: pointer;
+        background-color: #5084fde4;
+        transition: 0.2s;
+    }
+}
+
+
 .filter-popup-wrapper {
     background-color: white;
     filter: drop-shadow(0px 4px 61px rgba(169, 169, 169, 0.366));
@@ -19,6 +37,9 @@
     }
     button:hover {
         cursor: pointer;
+        background-color: #5084fde4;
+        transition: 0.25s;
+        color: white;
     }
 
     p {
@@ -37,7 +58,6 @@
         gap: 1rem;
         button {
             width: 8.5rem;
-            // height: 2rem;
         }
         
         .active {
@@ -62,9 +82,10 @@
         align-items: center;
         margin-top: 1.5rem;
         .apply-button {
-            color: white;
-            background-color: #4880FF;
-            height: 3rem;
+            // color: white;
+            // background-color: #4880FF;
+            // height: 3rem;
+            @include button-blue();
         }
     }
 }

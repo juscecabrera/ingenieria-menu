@@ -1,3 +1,23 @@
+@mixin button-blue {
+    color: white;
+    background-color: #4880FF;
+    width: 12rem;
+    height: 2.5rem;
+    border-radius: 15px;
+    border: 1px solid #979797;
+    font-family: Nunito;
+    font-size: 16px;
+
+    &:hover {
+        cursor: pointer;
+        background-color: #5084fde4;
+        transition: 0.2s;
+    }
+}
+
+
+
+
 .platos-wrapper {
     border-top: 1px solid black;
     // margin-top: 9.1%;
@@ -8,21 +28,19 @@
     background-color: #F5F6FA;
     font-family: Nunito;
     padding-bottom: 4rem;
+    // display: flex;
+    // justify-content: center;
+    // align-items: flex-start;
+    // flex-direction: column;
 
     h2 {
         font-size: 40px;
     }
     
     .platos-add-button {
-        padding: 0.5rem;
         margin: 1rem;
-        border-radius: 10px;
-        border: 1px solid black;
+        @include button-blue();
 
-    }
-    .platos-add-button:hover {
-        cursor: pointer;
-        background-color: rgba(0, 0, 0, 0.1);
     }
     
     .platos-table-wrapper {
@@ -76,13 +94,13 @@
                             }
                             
                             .delete-button:hover {
-                                fill: rgb(255,0,0);
                                 cursor: pointer;
+                                fill: rgb(255,0,0);
                             }
                             
                             .update-button:hover {
-                                fill: gray;
                                 cursor: pointer;
+                                fill: gray;
                             }
                         }
 
