@@ -1,55 +1,118 @@
+@mixin button-blue {
+    color: white;
+    background-color: #4880FF;
+    width: 12rem;
+    height: 2.5rem;
+    border-radius: 15px;
+    border: 1px solid #979797;
+    font-family: Nunito;
+    font-size: 16px;
+
+    &:hover {
+        cursor: pointer;
+        background-color: #5084fde4;
+        transition: 0.2s;
+    }
+}
+
 .costs-wrapper {
     border-top: 1px solid black;
-    // margin-top: 9.1%;
     margin-top: 5%;
-    margin-left: 10%;
-    padding-left: 4rem;
+    margin-left: 14%;
+    padding-left: 2rem;
+    padding-top: 2rem;
+    font-family: Nunito;
+    padding-bottom: 4rem;
+    height: 100%;
     
     h2 {
         font-size: 40px;
     }
 
     .costs-add-button {
-        padding: 0.5rem;
         margin: 1rem;
-        border-radius: 10px;
-        border: 1px solid black;
-
-    }
-    .costs-add-button:hover {
-        cursor: pointer;
-        background-color: rgba(0, 0, 0, 0.1);
+        @include button-blue();
     }
 
     .costs-table-wrapper {
         display: flex;
         justify-content: center;
         align-items: center;
+        flex-direction: column;
+        
         img {
             width: 5%;
         }
-
+        
         .costs-table {
-            border: 1px solid black;
-            border-collapse: collapse;
-            thead, th, td {
-                padding: 0.25rem;
-                border: 1px solid black;
+            width: 97.5%;
+            border-radius: 10px !important;
+            border: 0.4px solid #B9B9B9;
+            border-collapse: separate;
+            background-color: #FFFFFF;
+            border-spacing: 0;
+
+            thead {
                 text-align: center;
-                button {
-                    // padding: 1rem;
-                    width: 5rem;
-                    height: 2rem;
-                    // margin: 1rem;
-                    border-radius: 10px;
-                    border: 1px solid black;   
-                    padding: 0.5rem;     
-                }
-                button:hover {
-                    cursor: pointer;
-                    background-color: rgba(0, 0, 0, 0.1);
+                
+                tr {
+                    th {
+                        font-family: 'Nunito';
+                        font-weight: bold;
+                        padding: 0.85rem 2rem;
+                        border-bottom: 0.6px solid rgba(213, 213, 213, 0.616);
+                    }
                 }
             }
+            
+            tbody {
+                background-color: #FFFFFF;
+                tr {
+                    td {
+                        border: none;
+                        border-bottom: 0.4px solid rgba(151, 151, 151, 0.467);
+                        text-align: center;         
+                        
+                        .buttons-wrapper {
+                            display: flex;
+                            justify-content: space-between;
+                            align-items: center;
+
+                            .delete-button, .update-button {
+                                width: 40%;
+                            }
+                            
+                            .delete-button:hover {
+                                cursor: pointer;
+                                fill: rgb(255,0,0);
+                            }
+                            
+                            .update-button:hover {
+                                cursor: pointer;
+                                fill: gray;
+                            }
+                        }
+                    }
+
+                    
+
+                    td:last-child {
+                        padding: 0;
+                        padding-right: 1rem;
+                    }
+                }
+                tr:last-child {
+                    td {
+                        border-bottom: none;
+                        border-radius: 10px !important;
+                    }       
+                }
+            }
+
+
+
+
+
         }
     }
 

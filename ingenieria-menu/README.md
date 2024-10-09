@@ -1,8 +1,4 @@
-# React + Vite
+# Ingenieria Menu
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Ingenieria del Menu es una aplicacion que permite evaluar la rentabilidad, popularidad, popularidad futura, calidad, rendimiento, velocidad y demas metricas relevantes de la carta de un restaurante. 
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh

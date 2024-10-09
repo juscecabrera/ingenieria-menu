@@ -4,6 +4,37 @@
     justify-content: $justify;
 }
 
+@mixin button-blue {
+    color: white;
+    background-color: #4880FF;
+    width: 6rem;
+    height: 2.5rem;
+    border-radius: 15px;
+    border: 1px solid #979797;
+    font-family: Nunito;
+    font-size: 14.5px;
+
+    &:hover {
+        cursor: pointer;
+        background-color: #5084fde4;
+        transition: 0.2s;
+    }
+}
+
+
+@mixin select-style {
+    font-family: Nunito;
+    font-size: 15px;
+    border-radius: 8px;
+    height: 70%;
+    width: 50%;
+    border: 1px solid transparent;
+    outline: 2px solid #e0e0e0;
+    color: #828282;
+    option {
+        color: black;
+    }
+}
 
 .dataentry-wrapper {
     background-color: #fff;
@@ -17,6 +48,14 @@
     column-gap: 2%;
     grid-template-rows: repeat(8, 10%) 10.14%;
     row-gap: 2.5%;
+
+    input {
+        border-radius: 10px;
+        border: 1px solid #979797;
+        padding-left: 0.5rem;
+        font-family: Nunito;
+
+    }
 
     button {
         border-radius: 10px;
@@ -127,9 +166,10 @@
         grid-column: 3;
         grid-row: 2;
         @include flex-row(flex-start);
-        .dataentry-input-row-2-mes {
-            height: 70%;
-            width: 50%;
+        .dataentry-input-row-2-mes { //select
+            // height: 70%;
+            // width: 50%;
+            @include select-style();
         }
 
     }
@@ -138,8 +178,8 @@
         grid-column: 2;
         grid-row: 3;
         @include flex-row(flex-start);
-        .dataentry-input-row-2-cat {
-            height: 70%;
+        .dataentry-input-row-2-cat { //select
+            @include select-style();
             width: 100%;
         }
 
@@ -150,7 +190,8 @@
         grid-row: 4;
         @include flex-row(flex-start);
         .dataentry-input-row-3 {
-            height: 70%;
+            // height: 70%;
+            @include select-style();
             width: 100%;            
         }
     }
@@ -216,6 +257,7 @@
         grid-column: 3;
         @include flex-row(flex-start);
         button {
+            @include button-blue();
             height: 80%;
             width: 70%;
 
@@ -236,6 +278,7 @@
         button {
             height: 2rem;
             width: 4.5rem;
+            @include button-blue();
         }
 
     }
@@ -243,6 +286,13 @@
     .dataentry-accept-button-wrapper {
         grid-column: 2;
         @include flex-row(flex-end);
+        // button {
+        //     background-color: rgb(16, 192, 16);
+        //     &:hover {
+        //         background-color: rgba(16, 192, 16, 0.75);
+
+        //     }
+        // }
     }
 
     .dataentry-cancel-button-wrapper {
@@ -251,7 +301,12 @@
     }
     .dataentry-exit-button-wrapper {
         grid-column: 4;
-        // margin-left: 5rem;
         @include flex-row(flex-start);
+        button {
+            background-color: red;
+            &:hover {
+                background-color: rgba(255, 0, 0, 0.744);
+            }
+        }
     }
 }

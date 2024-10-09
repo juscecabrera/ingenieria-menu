@@ -79,7 +79,7 @@ function DataEntry({ setShowModal, refreshButton }) {
         <div className='dataentry-text-row-1'>Cod. Int.</div>
         <div className='dataentry-input-row-1-wrapper'>
             {/* No deja ingresar data no se porque pero esta bien porque no se deberia poder cambiar */}
-            <input className='dataentry-input-row-1' type="number" name='plate-id'/> 
+            <input className='dataentry-input-row-1' type="number" name='plate-id' disabled /> 
         </div>
 
         <div className='dataentry-text-row-2-mes'>Mes</div>
@@ -102,10 +102,10 @@ function DataEntry({ setShowModal, refreshButton }) {
 
         </div>
 
-        <div className='dataentry-text-row-2-cat'>Categoria</div>
+        <div className='dataentry-text-row-2-cat'>Categoría</div>
         <div className='dataentry-input-row-2-cat-wrapper'>
             <select className='dataentry-input-row-2-cat' name="plate-category" onChange={(e) => handleChange(e)}>
-                <option>Seleccione una opcion</option>
+                <option>Seleccione una opción</option>
                 <option value={"ENTRADAS"}>ENTRADAS</option>
                 <option value={"FONDOS"}>FONDOS</option>
                 <option value={"POSTRES"}>POSTRES</option>
@@ -115,7 +115,9 @@ function DataEntry({ setShowModal, refreshButton }) {
         </div>
 
         <div className='dataentry-text-row-2-button-wrapper'>
-            <button className='dataentry-text-row-2-button'>Nueva Categoria</button>
+            <button className='dataentry-text-row-2-button'>Nueva Categoría</button>
+            {/* Al agregarla, tiene que agregarlo a los filtros, al select de arriba para seleccionar opcion, al crear informes */}
+            {/* En DataEntry.jsx line 109, en FilterPopUp.jsx line 29-32, en InformesCreation.jsx line 70 */}
         </div>
 
         <div className='dataentry-text-row-3'>Plato</div>

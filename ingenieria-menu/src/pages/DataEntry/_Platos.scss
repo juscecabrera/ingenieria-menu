@@ -28,10 +28,6 @@
     background-color: #F5F6FA;
     font-family: Nunito;
     padding-bottom: 4rem;
-    // display: flex;
-    // justify-content: center;
-    // align-items: flex-start;
-    // flex-direction: column;
 
     h2 {
         font-size: 40px;
@@ -102,18 +98,6 @@
                                 cursor: pointer;
                                 fill: gray;
                             }
-                        }
-
-                        button {
-                            width: 5rem;
-                            height: 2rem;
-                            border-radius: 10px;
-                            border: 1px solid black;   
-                            padding: 0.5rem;     
-                        }
-                        button:hover {
-                            cursor: pointer;
-                            background-color: rgba(0, 0, 0, 0.1);
                         }
                     }
                 }

@@ -1,28 +1,54 @@
 import React from 'react'
+import TableDeleteIcon from '../../assets/svg/TableDeleteIcon.jsx'
+import TableEditIcon from '../../assets/svg/TableEditIcon.jsx'
 
 function CostsTable({ costsData }) {
-  return (
+    const deleteButton = () => { 
+        alert('pum')
+    }
+
+    const updateButton = () => { 
+        alert('pam')
+    }
+    
+    return (
     <>
         <table className='costs-table'>
         <thead>
             <tr>
-                <th>Código</th> 
+                <th>ID</th> 
                 <th>Mes</th> 
-                <th>Sueldo Cocina</th>
-                <th>Sueldo Servicio</th>
-                <th>Sueldo Administrativos</th>
+                <th>Suel. Cocina</th>
+                <th>Suel. Servicio</th>
+                <th>Suel. Admin.</th>
                 <th>Alquiler</th>
                 <th>Depreciación</th>
-                <th>Servicios Básicos</th>
+                <th>Serv. Básicos</th>
                 <th>Publicidad</th>
                 <th>Internet</th>
                 <th>Otros</th>
-                <th></th>
+                <th>Total</th>
                 <th></th>
             </tr>
         </thead>
         <tbody>
-            {costsData?.map((costs, index) => (
+            {costsData?.map((costs, index) => {
+
+            const totalCosts = (
+                (Number(costs.Sueldo_Cocina) || 0) +
+                (Number(costs.Sueldo_Servicio) || 0) +
+                (Number(costs.Sueldo_Administrativos) || 0) +
+                (Number(costs.Alquiler) || 0) +
+                (Number(costs.Depreciacion) || 0) +
+                (Number(costs.Servicios_basicos) || 0) +
+                (Number(costs.Publicidad) || 0) +
+                (Number(costs.Internet) || 0) +
+                (Number(costs.Otros) || 0)
+            ).toFixed(2)
+
+            //Lo mejor seria crear una nueva columna con los costos totales
+
+            return (
             <tr key={index}>
                 {/* <td>{costs.Codigo}</td> */}
                 <td>{index + 1}</td> {/*Este es el id artificial solamente para aspectos esteticos, NO es el mismo que en las tablas de MySQL */}
@@ -36,10 +62,15 @@ function CostsTable({ costsData }) {
                 <td>{costs.Publicidad}</td>
                 <td>{costs.Internet}</td>
                 <td>{costs.Otros}</td>
-                <td><button onClick={() => updateButton()}>Actualizar</button></td>
-                <td><button onClick={() => deleteButton()}>Eliminar</button></td>
+                <td>{totalCosts}</td>
+                <td>
+                    <div className='buttons-wrapper'>
+                        <TableDeleteIcon deleteButton={deleteButton} />
+                        <TableEditIcon updateButton={updateButton} />
+                    </div>
+                </td>
             </tr>
-            ))}
+        )})}
         </tbody>
     </table>
     </>

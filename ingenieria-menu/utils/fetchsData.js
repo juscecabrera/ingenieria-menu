@@ -131,7 +131,7 @@ export const createCosts = (urlServer, costsData) => {
 
 }
 
-export const fetchCreateInforms = (urlServer, informsData, setData) => { 
+export const fetchCreateInforms = (urlServer, informsData, setData, setShowModal) => { 
     const payload = {
         Informes_Mes : informsData.Informes_Mes,
         Informes_Categoria : informsData.Informes_Categoria,
@@ -154,6 +154,7 @@ export const fetchCreateInforms = (urlServer, informsData, setData) => {
     })
     .then(data => {
         setData(data)
+        setShowModal(false)
     })
     .catch(error => {
         console.error('Hubo un problema con la solicitud en fetchData:', error);

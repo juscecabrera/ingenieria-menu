@@ -25,7 +25,8 @@ function InformesCreation({ setShowModal, setData }) {
     
     const createInforms = () => {
         try {
-            fetchCreateInforms(urlServer, informsData, setData)
+            fetchCreateInforms(urlServer, informsData, setData, setShowModal)
+
         } catch (error) {
             console.log("Error en front al createInforms", error);   
         }
