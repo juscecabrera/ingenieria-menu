@@ -7,13 +7,14 @@
 @mixin button-blue {
     color: white;
     background-color: #4880FF;
-    width: 6rem;
-    height: 2.5rem;
     border-radius: 15px;
     border: 1px solid #979797;
     font-family: Nunito;
     font-size: 14.5px;
-
+    
+    width: 6rem;
+    height: 2.5rem;
+    
     &:hover {
         cursor: pointer;
         background-color: #5084fde4;
@@ -60,15 +61,19 @@
     button {
         border-radius: 10px;
         border: 1px solid black;
+
+        &:hover {
+            cursor: pointer;
+            background-color: rgba(0, 0, 0, 0.1);
+
+        }
     }
-    button:hover {
-        cursor: pointer;
-        background-color: rgba(0, 0, 0, 0.1);
-    }
+    
     h1 {
         grid-column: 1/5;
         grid-row: 1;
     }
+
     .dataentry-text-row-1 {
         @include flex-row(flex-end);
         grid-column: 1;
@@ -190,43 +195,33 @@
         grid-row: 4;
         @include flex-row(flex-start);
         .dataentry-input-row-3 {
-            // height: 70%;
             @include select-style();
             width: 100%;            
         }
     }
 
 
-    .dataentry-input-row-4-wrapper {
+    @mixin dataentry-row($grid-row) {
         grid-column: 2;
-        grid-row: 5;
+        grid-row: $grid-row;
         @include flex-row(flex-start);
-
-        .dataentry-input-row-4 {
+      
+        input {
             height: 70%;
-            width: 50%;            
+            width: 50%;
         }
-
     }
 
+    .dataentry-input-row-4-wrapper {
+        @include dataentry-row(5);
+    }
+    
     .dataentry-input-row-5-wrapper {
-        grid-column: 2;
-        grid-row: 6;
-        @include flex-row(flex-start);        
-        .dataentry-input-row-5 {
-            height: 70%;
-            width: 50%;            
-        }
+        @include dataentry-row(6);
     }
-
+    
     .dataentry-input-row-6-wrapper {
-        grid-column: 2;
-        grid-row: 7;
-        @include flex-row(flex-start);        
-        .dataentry-input-row-6 {
-            height: 70%;
-            width: 50%; 
-        }
+        @include dataentry-row(7);
     }
 
     .dataentry-input-row-6-valor-wrapper {
@@ -308,5 +303,64 @@
                 background-color: rgba(255, 0, 0, 0.744);
             }
         }
+    }
+
+
+    @media (max-width: 478px) {
+        width: 85%;
+        height: 75%;
+        padding: 1rem;
+        column-gap: 2%;
+        grid-template-columns: 25% 35% 35% 0%;
+        grid-template-rows: repeat(7, 10%) 10.14%;
+        
+        
+        .dataentry-text-row-1, .dataentry-text-row-2-cat, .dataentry-text-row-3 {
+            @include flex-row(flex-start);
+        }
+        
+        .dataentry-text-row-2-button-wrapper, .dataentry-input-row-2-mes-wrapper, .dataentry-text-row-3-button-wrapper {
+            @include flex-row(center);
+            button, .dataentry-input-row-2-mes {
+                height: 80%;
+                width: 90%;
+            }
+        }
+        @for $i from 4 through 6 {
+            .dataentry-input-row-#{$i}-wrapper {
+              input {
+                height: 70%;
+                width: 70%;
+              }
+            }
+        }
+
+        .dataentry-text-row-7 {
+            // @include flex-row(flex-end);
+            .dataentry-input-row-7 {
+                height: 70%;
+                width: 75%; 
+                // margin-left: 0.5rem;
+            }
+        }
+    }
+
+    @media (max-width: 767px) {
+    }
+
+    @media (max-width: 991px) {
+    }
+
+    // @media (max-width: 1280px) { Esta es la base
+
+    // }
+    @media (max-width: 1440px) {
+    }
+
+    @media (max-width: 1920px) {
+    }
+
+    @media (min-width: 1921px) {
+        
     }
 }

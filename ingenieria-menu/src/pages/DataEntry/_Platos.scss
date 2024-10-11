@@ -1,12 +1,14 @@
 @mixin button-blue {
     color: white;
     background-color: #4880FF;
-    width: 12rem;
-    height: 2.5rem;
-    border-radius: 15px;
     border: 1px solid #979797;
     font-family: Nunito;
     font-size: 16px;
+    
+    
+    width: 12rem;
+    height: 2.5rem;
+    border-radius: 15px;
 
     &:hover {
         cursor: pointer;
@@ -20,14 +22,11 @@
 
 .platos-wrapper {
     border-top: 1px solid black;
-    // margin-top: 9.1%;
-    margin-top: 5%;
-    margin-left: 14%;
-    padding-left: 2rem;
-    padding-top: 2rem;
     background-color: #F5F6FA;
     font-family: Nunito;
-    padding-bottom: 4rem;
+
+    padding: 2rem 0 4rem 2rem;
+    margin: 5% 0 0 14%;
 
     h2 {
         font-size: 40px;
@@ -48,59 +47,50 @@
             width: 5%;
         }
 
-        
-
         .platos-table {
             border-radius: 10px !important;
             border: 0.4px solid #B9B9B9;
             border-collapse: separate;
-            background-color: #FFFFFF;
+            background-color: #FCFDFD;
             border-spacing: 0;
+            text-align: center;
 
-            thead {
-                text-align: center;
-                
-                tr {
-                    th {
-                        font-family: 'Nunito';
-                        font-weight: bold;
-                        padding: 0.85rem 2rem;
-                        border-bottom: 0.6px solid rgba(213, 213, 213, 0.616);
-                    }
-                }
+            thead tr th {
+                font-weight: bold;
+                padding: 0.85rem 2rem;
+                border-bottom: 0.6px solid rgba(213, 213, 213, 0.616);
             }
             
             tbody {
                 background-color: #FFFFFF;
-                tr {
-                    td {
-                        border: none;
-                        border-bottom: 0.4px solid rgba(151, 151, 151, 0.467);
-                        text-align: center;                        
-                        padding: 0.85rem 2rem;
+                tr td {
+                    border: none;
+                    border-bottom: 0.6px solid rgba(213, 213, 213, 0.616);
+                    padding: 0.85rem 2rem;
 
+                    .buttons-wrapper {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+
+                        .delete-button, .update-button {
+                            width: 30%;
+                            &:hover {
+                                cursor: pointer;
+                            }
+                        }
                         
-                        .buttons-wrapper {
-                            display: flex;
-                            justify-content: space-between;
-                            align-items: center;
-
-                            .delete-button, .update-button {
-                                width: 30%;
-                            }
-                            
-                            .delete-button:hover {
-                                cursor: pointer;
-                                fill: rgb(255,0,0);
-                            }
-                            
-                            .update-button:hover {
-                                cursor: pointer;
-                                fill: gray;
-                            }
+                        .delete-button:hover {
+                            fill: rgb(255,0,0);
+                        }
+                        
+                        .update-button:hover {
+                            fill: gray;
                         }
                     }
                 }
+
+
                 tr:last-child {
                     td {
                         border-bottom: none;
@@ -108,12 +98,7 @@
                     }       
                 }
             }
-
-
-           
-
         }
-
     }
 
     .platos-options-wrapper {
@@ -158,5 +143,81 @@
         width: 100%;
         height: 100%;
         background-color: rgb(0,0,0,0.3);
+    }
+
+
+    @media (max-width: 478px) {
+        padding: 1rem 1rem 4rem 1rem;
+        margin: 3% 0 0 0;
+        border-top: none;
+
+        h2 {
+            font-size: 40px;
+        }
+        
+        .platos-add-button {
+            @include button-blue();
+            width: 9rem;
+            height: 3.5rem;  
+            margin: 2rem;
+        }
+
+        .platos-table-wrapper {
+            font-size: 15px;
+            width: min-content;
+
+    
+            .platos-table {
+                thead tr th{
+                    padding: 0.5rem 1rem;
+                }
+                
+                tbody tr td {
+                    padding: 0.5rem 1rem;
+                    .buttons-wrapper {
+                        width: 70px;
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        gap: 10px;
+                        .delete-button, .update-button {
+                            width: 100%;
+                        }   
+                    }
+                }
+            }
+        }
+
+        .platos-modal-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgb(0,0,0,0.3);
+        }
+    }
+
+    @media (max-width: 767px) {
+    }
+
+    @media (max-width: 991px) {
+    }
+
+    // @media (max-width: 1280px) { Esta es la base
+    //     // padding: 8px 16px;
+    //     // font-size: 14px;
+    // }
+    @media (max-width: 1440px) {
+    }
+
+    @media (max-width: 1920px) {
+    }
+
+    @media (min-width: 1921px) {
+        
     }
 }

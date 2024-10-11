@@ -224,7 +224,7 @@ body {
   align-items: center;
   justify-content: flex-start;
 }
-.dataentry-wrapper .dataentry-input-row-4-wrapper .dataentry-input-row-4 {
+.dataentry-wrapper .dataentry-input-row-4-wrapper input {
   height: 70%;
   width: 50%;
 }
@@ -235,7 +235,7 @@ body {
   align-items: center;
   justify-content: flex-start;
 }
-.dataentry-wrapper .dataentry-input-row-5-wrapper .dataentry-input-row-5 {
+.dataentry-wrapper .dataentry-input-row-5-wrapper input {
   height: 70%;
   width: 50%;
 }
@@ -246,7 +246,7 @@ body {
   align-items: center;
   justify-content: flex-start;
 }
-.dataentry-wrapper .dataentry-input-row-6-wrapper .dataentry-input-row-6 {
+.dataentry-wrapper .dataentry-input-row-6-wrapper input {
   height: 70%;
   width: 50%;
 }
@@ -281,12 +281,12 @@ body {
 .dataentry-wrapper .dataentry-text-row-2-button-wrapper button, .dataentry-wrapper .dataentry-text-row-3-button-wrapper button {
   color: white;
   background-color: #4880FF;
-  width: 6rem;
-  height: 2.5rem;
   border-radius: 15px;
   border: 1px solid #979797;
   font-family: Nunito;
   font-size: 14.5px;
+  width: 6rem;
+  height: 2.5rem;
   height: 80%;
   width: 70%;
 }
@@ -309,12 +309,12 @@ body {
   width: 4.5rem;
   color: white;
   background-color: #4880FF;
-  width: 6rem;
-  height: 2.5rem;
   border-radius: 15px;
   border: 1px solid #979797;
   font-family: Nunito;
   font-size: 14.5px;
+  width: 6rem;
+  height: 2.5rem;
 }
 .dataentry-wrapper .dataentry-accept-button-wrapper button:hover, .dataentry-wrapper .dataentry-cancel-button-wrapper button:hover, .dataentry-wrapper .dataentry-exit-button-wrapper button:hover {
   cursor: pointer;
@@ -345,7 +345,47 @@ body {
 .dataentry-wrapper .dataentry-exit-button-wrapper button:hover {
   background-color: rgba(255, 0, 0, 0.744);
 }
-
+@media (max-width: 478px) {
+  .dataentry-wrapper {
+    width: 85%;
+    height: 75%;
+    padding: 1rem;
+    -moz-column-gap: 2%;
+         column-gap: 2%;
+    grid-template-columns: 25% 35% 35% 0%;
+    grid-template-rows: repeat(7, 10%) 10.14%;
+  }
+  .dataentry-wrapper .dataentry-text-row-1, .dataentry-wrapper .dataentry-text-row-2-cat, .dataentry-wrapper .dataentry-text-row-3 {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  .dataentry-wrapper .dataentry-text-row-2-button-wrapper, .dataentry-wrapper .dataentry-input-row-2-mes-wrapper, .dataentry-wrapper .dataentry-text-row-3-button-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .dataentry-wrapper .dataentry-text-row-2-button-wrapper button, .dataentry-wrapper .dataentry-text-row-2-button-wrapper .dataentry-input-row-2-mes, .dataentry-wrapper .dataentry-input-row-2-mes-wrapper button, .dataentry-wrapper .dataentry-input-row-2-mes-wrapper .dataentry-input-row-2-mes, .dataentry-wrapper .dataentry-text-row-3-button-wrapper button, .dataentry-wrapper .dataentry-text-row-3-button-wrapper .dataentry-input-row-2-mes {
+    height: 80%;
+    width: 90%;
+  }
+  .dataentry-wrapper .dataentry-input-row-4-wrapper input {
+    height: 70%;
+    width: 70%;
+  }
+  .dataentry-wrapper .dataentry-input-row-5-wrapper input {
+    height: 70%;
+    width: 70%;
+  }
+  .dataentry-wrapper .dataentry-input-row-6-wrapper input {
+    height: 70%;
+    width: 70%;
+  }
+  .dataentry-wrapper .dataentry-text-row-7 .dataentry-input-row-7 {
+    height: 70%;
+    width: 75%;
+  }
+}
 .setup-wrapper {
   border: 1px solid black;
   position: absolute;
@@ -629,17 +669,17 @@ body {
 
 .layoutside-wrapper {
   position: fixed;
-  right: 86%;
-  width: 14%;
-  top: 0;
-  bottom: 0;
   background-color: white;
-  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
   filter: drop-shadow(0px 4px 5px rgba(0, 0, 0, 0.25));
+  right: 86%;
+  width: 14%;
+  top: 0;
+  bottom: 0;
+  height: 100vh;
 }
 .layoutside-wrapper .layoutside-svg-1-wrapper {
   display: flex;
@@ -652,7 +692,17 @@ body {
 .layoutside-wrapper .layoutside-svg-1-wrapper .layoutside-svg-1 {
   width: 70%;
 }
-
+@media (max-width: 478px) {
+  .layoutside-wrapper {
+    right: 84%;
+    width: 16%;
+    top: 0;
+    bottom: 0;
+    height: 100vh;
+    background-color: red;
+    display: none;
+  }
+}
 .layoutside-svg-wrapper, .layoutside-svg-wrapper-active {
   display: grid;
   grid-template-columns: 15% 85%;
@@ -1001,14 +1051,14 @@ body {
 .navbar-wrapper {
   background-color: white;
   position: absolute;
+  display: grid;
+  grid-template-columns: 85% 15%;
+  font-family: Nunito;
   left: 14.5%;
   width: 85.5%;
   height: 10%;
   top: 0;
   bottom: 0;
-  display: grid;
-  grid-template-columns: 85% 15%;
-  font-family: Nunito;
 }
 .navbar-wrapper .nav-wrapper {
   grid-column: 2;
@@ -1038,20 +1088,31 @@ body {
 .navbar-wrapper .nav-wrapper .nav-arrow-div .nav-arrow-svg {
   transition: 0.5s ease;
 }
-
+@media (max-width: 478px) {
+  .navbar-wrapper {
+    left: 25.25%;
+    width: 100%;
+    height: 10%;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: blue;
+    display: none;
+  }
+}
 .filter-wrapper {
-  margin-top: 2rem;
   background-color: #F9F9FA;
   border-radius: 10px;
   border: 0.3px solid #979797;
-  width: 41.5%;
-  height: 4rem;
   display: flex;
   justify-content: center;
   align-items: center;
   width: -moz-fit-content;
   width: fit-content;
   font-size: 16px;
+  margin-top: 2rem;
+  width: 41.5%;
+  height: 4rem;
 }
 .filter-wrapper .filter-div {
   display: flex;
@@ -1086,7 +1147,23 @@ body {
   cursor: pointer;
   background-color: #f4f0f0;
 }
-
+@media (max-width: 478px) {
+  .filter-wrapper {
+    margin-top: 2rem;
+    width: 100%;
+    height: 4rem;
+  }
+  .filter-wrapper .filter-div {
+    margin: 0 0.1rem;
+    padding: 0.5rem;
+  }
+  .filter-wrapper .filter-div:first-child {
+    display: none;
+  }
+  .filter-wrapper .filter-div:last-child p {
+    display: none;
+  }
+}
 .filter-popup-wrapper {
   background-color: white;
   filter: drop-shadow(0px 4px 61px rgba(169, 169, 169, 0.366));
@@ -1165,13 +1242,10 @@ body {
 
 .platos-wrapper {
   border-top: 1px solid black;
-  margin-top: 5%;
-  margin-left: 14%;
-  padding-left: 2rem;
-  padding-top: 2rem;
   background-color: #F5F6FA;
   font-family: Nunito;
-  padding-bottom: 4rem;
+  padding: 2rem 0 4rem 2rem;
+  margin: 5% 0 0 14%;
 }
 .platos-wrapper h2 {
   font-size: 40px;
@@ -1180,12 +1254,12 @@ body {
   margin: 1rem;
   color: white;
   background-color: #4880FF;
-  width: 12rem;
-  height: 2.5rem;
-  border-radius: 15px;
   border: 1px solid #979797;
   font-family: Nunito;
   font-size: 16px;
+  width: 12rem;
+  height: 2.5rem;
+  border-radius: 15px;
 }
 .platos-wrapper .platos-add-button:hover {
   cursor: pointer;
@@ -1205,14 +1279,11 @@ body {
   border-radius: 10px !important;
   border: 0.4px solid #B9B9B9;
   border-collapse: separate;
-  background-color: #FFFFFF;
+  background-color: #FCFDFD;
   border-spacing: 0;
-}
-.platos-wrapper .platos-table-wrapper .platos-table thead {
   text-align: center;
 }
 .platos-wrapper .platos-table-wrapper .platos-table thead tr th {
-  font-family: "Nunito";
   font-weight: bold;
   padding: 0.85rem 2rem;
   border-bottom: 0.6px solid rgba(213, 213, 213, 0.616);
@@ -1222,8 +1293,7 @@ body {
 }
 .platos-wrapper .platos-table-wrapper .platos-table tbody tr td {
   border: none;
-  border-bottom: 0.4px solid rgba(151, 151, 151, 0.467);
-  text-align: center;
+  border-bottom: 0.6px solid rgba(213, 213, 213, 0.616);
   padding: 0.85rem 2rem;
 }
 .platos-wrapper .platos-table-wrapper .platos-table tbody tr td .buttons-wrapper {
@@ -1234,12 +1304,13 @@ body {
 .platos-wrapper .platos-table-wrapper .platos-table tbody tr td .buttons-wrapper .delete-button, .platos-wrapper .platos-table-wrapper .platos-table tbody tr td .buttons-wrapper .update-button {
   width: 30%;
 }
-.platos-wrapper .platos-table-wrapper .platos-table tbody tr td .buttons-wrapper .delete-button:hover {
+.platos-wrapper .platos-table-wrapper .platos-table tbody tr td .buttons-wrapper .delete-button:hover, .platos-wrapper .platos-table-wrapper .platos-table tbody tr td .buttons-wrapper .update-button:hover {
   cursor: pointer;
+}
+.platos-wrapper .platos-table-wrapper .platos-table tbody tr td .buttons-wrapper .delete-button:hover {
   fill: rgb(255, 0, 0);
 }
 .platos-wrapper .platos-table-wrapper .platos-table tbody tr td .buttons-wrapper .update-button:hover {
-  cursor: pointer;
   fill: gray;
 }
 .platos-wrapper .platos-table-wrapper .platos-table tbody tr:last-child td {
@@ -1282,7 +1353,66 @@ body {
   height: 100%;
   background-color: rgba(0, 0, 0, 0.3);
 }
-
+@media (max-width: 478px) {
+  .platos-wrapper {
+    padding: 1rem 1rem 4rem 1rem;
+    margin: 3% 0 0 0;
+    border-top: none;
+  }
+  .platos-wrapper h2 {
+    font-size: 40px;
+  }
+  .platos-wrapper .platos-add-button {
+    color: white;
+    background-color: #4880FF;
+    border: 1px solid #979797;
+    font-family: Nunito;
+    font-size: 16px;
+    width: 12rem;
+    height: 2.5rem;
+    border-radius: 15px;
+    width: 9rem;
+    height: 3.5rem;
+    margin: 2rem;
+  }
+  .platos-wrapper .platos-add-button:hover {
+    cursor: pointer;
+    background-color: rgba(80, 132, 253, 0.8941176471);
+    transition: 0.2s;
+  }
+  .platos-wrapper .platos-table-wrapper {
+    font-size: 15px;
+    width: -moz-min-content;
+    width: min-content;
+  }
+  .platos-wrapper .platos-table-wrapper .platos-table thead tr th {
+    padding: 0.5rem 1rem;
+  }
+  .platos-wrapper .platos-table-wrapper .platos-table tbody tr td {
+    padding: 0.5rem 1rem;
+  }
+  .platos-wrapper .platos-table-wrapper .platos-table tbody tr td .buttons-wrapper {
+    width: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+  }
+  .platos-wrapper .platos-table-wrapper .platos-table tbody tr td .buttons-wrapper .delete-button, .platos-wrapper .platos-table-wrapper .platos-table tbody tr td .buttons-wrapper .update-button {
+    width: 100%;
+  }
+  .platos-wrapper .platos-modal-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+}
 .fecha-popup-wrapper {
   background-color: white;
   filter: drop-shadow(0px 4px 61px rgba(169, 169, 169, 0.366));

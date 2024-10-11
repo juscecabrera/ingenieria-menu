@@ -67,8 +67,15 @@ function Platos() {
         <div className='platos-table-wrapper'>
         {loading 
         ? <img src={SpinnerSVG} className='users-spinner' />
-        :  <PlatosTable platesData={currentPlates} />
+        // :  <PlatosTable platesData={currentPlates} />
+        : ''
         }
+
+        {/* tengo que cambiar la estructura de PlatosTable para responsive, mostrar solo id, nombre, fecha y tener boton de Mas Detalles que lleve a otro componente con la info completa 
+        
+        estoy editando data entry con esto en mente pues no tiene sentido tener una tabla que salga de la pantalla de mobile y estilizar segun eso pues no se va a mantener
+        
+        */}
         
         </div>
         

@@ -1,17 +1,18 @@
 .layoutside-wrapper {
     position: fixed;
-    right: 86%;
-    width: 14%;
-    top: 0;
-    bottom: 0;
-    // background-color: rgb(45, 162, 18);
     background-color: white;
-    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
     filter: drop-shadow(0px 4px 5px rgba(0, 0, 0, 0.25));
+
+    //esto cambia con los media queries
+    right: 86%;
+    width: 14%;
+    top: 0;
+    bottom: 0;
+    height: 100vh;
 
     .layoutside-svg-1-wrapper {
         display: flex;
@@ -30,4 +31,35 @@
 
     }
 
+
+    @media (max-width: 478px) {
+        right: 84%;
+        width: 16%;
+        top: 0;
+        bottom: 0;
+        height: 100vh;
+        background-color: red;
+        display: none;
+    
+    }
+
+    @media (max-width: 767px) {
+    }
+
+    @media (max-width: 991px) {
+    }
+
+    // @media (max-width: 1280px) { Esta es la base
+    //     // padding: 8px 16px;
+    //     // font-size: 14px;
+    // }
+    @media (max-width: 1440px) {
+    }
+
+    @media (max-width: 1920px) {
+    }
+
+    @media (min-width: 1921px) {
+        
+    }
 }
