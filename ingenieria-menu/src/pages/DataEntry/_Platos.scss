@@ -164,25 +164,23 @@
 
         .platos-table-wrapper {
             font-size: 15px;
-            width: min-content;
-
-    
+            width: 100%;
             .platos-table {
                 thead tr th{
-                    padding: 0.5rem 1rem;
+                    padding: 1rem 0rem;
+                    font-size: 15px;
                 }
-                
+                .noshow {
+                    display: none;
+                }
                 tbody tr td {
-                    padding: 0.5rem 1rem;
-                    .buttons-wrapper {
-                        width: 70px;
-                        display: flex;
-                        justify-content: space-between;
-                        align-items: center;
-                        gap: 10px;
-                        .delete-button, .update-button {
-                            width: 100%;
-                        }   
+                    padding: 1rem;
+                    .buttons-wrapper .more-button { //boton Ver
+                        @include button-blue();
+                        font-size: 14px;
+                        width: 3.5rem;
+                        height: 2rem;
+                        border: 0.1px solid #9797977b;
                     }
                 }
             }
@@ -199,7 +197,13 @@
             height: 100%;
             background-color: rgb(0,0,0,0.3);
         }
+
+        .platos-options-wrapper {
+            margin-top: 1rem;
+            margin-bottom: 2rem;
+        }
     }
+
 
     @media (max-width: 767px) {
     }

@@ -55,7 +55,8 @@
         bottom: 0;
         background-color: blue;
         display: none;
-    
+
+        //en celular, solo tendremos el layoutside que esta abajo, entonces solo tenemos que agregar en layoutside la opcion del usuario
     }
 
     @media (max-width: 767px) {

@@ -16,9 +16,7 @@
             width: 100%;
             height: 55%;
         }
-
     }
-    
     
     .layoutside-p {
         grid-column: 2;
@@ -35,6 +33,45 @@
 
     }
 
+
+    @media (max-width: 478px) {
+        width: 100%;
+        height: 100%;
+        padding-left: 0;
+        display: block;
+        
+        .layoutside-svg-container {
+            width: 100%;
+            height: 100%;
+            .layoutside-svg {
+                width: 100%;
+            }
+        }
+        
+        
+        .layoutside-p {
+            display: none;
+        }
+    }
+
+    @media (max-width: 767px) {
+    }
+
+    @media (max-width: 991px) {
+    }
+
+    // @media (max-width: 1280px) { Esta es la base
+
+    // }
+    @media (max-width: 1440px) {
+    }
+
+    @media (max-width: 1920px) {
+    }
+
+    @media (min-width: 1921px) {
+        
+    }
 }
 
 .layoutside-svg-wrapper:hover {
@@ -45,22 +82,12 @@
 .layoutside-svg-wrapper-active {
     background-color: #4880FF;
 
-    .layoutside-p {
-        p {
-            color: white;
-        }
-
+    .layoutside-p p {
+        color: white;
     }
-}
 
-.layoutside-svg-wrapper-active:hover {
-    background-color: #5084fde4;
-    cursor: pointer;
-
-    .layoutside-p {
-        p {
-            color: white;
-        }
-
+    &:hover {
+        background-color: #5084fde4;
+        cursor: pointer;
     }
 }

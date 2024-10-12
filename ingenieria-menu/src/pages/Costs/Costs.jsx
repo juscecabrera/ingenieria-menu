@@ -33,6 +33,7 @@ function Costs() {
     <div className='costs-wrapper'>
         <h2>Costos</h2>
 
+        {/* de repente hacer un div con display flex pero tengo que ver como queda con los otros breakpoints */}
         <button className='costs-add-button' onClick={() => handleAddCosts()}>Registrar costos</button>
 
         <button className='costs-add-button' onClick={() => refreshButton()}>Actualizar</button>
@@ -41,6 +42,7 @@ function Costs() {
             {loading 
             ?  <img src={SpinnerSVG} className='users-spinner' />
             : <CostsTable costsData={costsData}/>}
+            {/* : ''} */}
 
         </div>
 

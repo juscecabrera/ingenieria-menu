@@ -18,15 +18,15 @@ function CostsTable({ costsData }) {
             <tr>
                 <th>ID</th> 
                 <th>Mes</th> 
-                <th>Suel. Cocina</th>
-                <th>Suel. Servicio</th>
-                <th>Suel. Admin.</th>
-                <th>Alquiler</th>
-                <th>Depreciación</th>
-                <th>Serv. Básicos</th>
-                <th>Publicidad</th>
-                <th>Internet</th>
-                <th>Otros</th>
+                <th className='noshow'>Suel. Cocina</th>
+                <th className='noshow'>Suel. Servicio</th>
+                <th className='noshow'>Suel. Admin.</th>
+                <th className='noshow'>Alquiler</th>
+                <th className='noshow'>Depreciación</th>
+                <th className='noshow'>Serv. Básicos</th>
+                <th className='noshow'>Publicidad</th>
+                <th className='noshow'>Internet</th>
+                <th className='noshow'>Otros</th>
                 <th>Total</th>
                 <th></th>
             </tr>
@@ -53,20 +53,22 @@ function CostsTable({ costsData }) {
                 {/* <td>{costs.Codigo}</td> */}
                 <td>{index + 1}</td> {/*Este es el id artificial solamente para aspectos esteticos, NO es el mismo que en las tablas de MySQL */}
                 <td>{costs.Mes}</td>
-                <td>{costs.Sueldo_Cocina}</td>
-                <td>{costs.Sueldo_Servicio}</td>
-                <td>{costs.Sueldo_Administrativos}</td>
-                <td>{costs.Alquiler}</td>
-                <td>{costs.Depreciacion}</td>
-                <td>{costs.Servicios_basicos}</td>
-                <td>{costs.Publicidad}</td>
-                <td>{costs.Internet}</td>
-                <td>{costs.Otros}</td>
+                <td className='noshow'>{costs.Sueldo_Cocina}</td>
+                <td className='noshow'>{costs.Sueldo_Servicio}</td>
+                <td className='noshow'>{costs.Sueldo_Administrativos}</td>
+                <td className='noshow'>{costs.Alquiler}</td>
+                <td className='noshow'>{costs.Depreciacion}</td>
+                <td className='noshow'>{costs.Servicios_basicos}</td>
+                <td className='noshow'>{costs.Publicidad}</td>
+                <td className='noshow'>{costs.Internet}</td>
+                <td className='noshow'>{costs.Otros}</td>
                 <td>{totalCosts}</td>
                 <td>
                     <div className='buttons-wrapper'>
                         <TableDeleteIcon deleteButton={deleteButton} />
                         <TableEditIcon updateButton={updateButton} />
+                        <button className='more-button'>Ver</button>
+
                     </div>
                 </td>
             </tr>

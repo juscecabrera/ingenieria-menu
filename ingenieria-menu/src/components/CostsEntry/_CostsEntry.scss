@@ -103,4 +103,73 @@
         @include accept-cancel-button();
 
     }
+
+    @media (max-width: 478px) {
+        width: 85%;
+        height: 75%;
+        padding: 1rem;
+        grid-template-rows: 1fr 1fr 9fr 1fr;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 5%;
+        row-gap: 2%;
+
+        .costsentry-button-wrapper {
+            border: none;
+            button {
+                margin: 0.5rem;
+                width: 80%;
+                height: 90%;
+            }
+        }
+
+        .costsentry-table-wrapper {
+            grid-template-columns: 2fr 1fr;
+            column-gap: 5%;
+            row-gap: 2.5%;
+            margin: 0;
+            padding: 0.75rem 0;
+            height: 100%;
+            .costsentry-table-input {
+                input, select {
+                    width: 80%;
+                    border-radius: 10px;
+                    height: 95%;
+                }
+            }
+        }
+
+        .costsentry-accept-button-wrapper, .costsentry-cancel-button-wrapper {
+            button {
+                width: 40%;
+                height: 100%;
+            }
+        }
+    
+        .costsentry-exit-button-wrapper {
+            margin-left: 5rem;
+            button {
+                width: 70%;
+                height: 100%;
+            }
+        }
+    }
+
+    @media (max-width: 767px) {
+    }
+
+    @media (max-width: 991px) {
+    }
+
+    // @media (max-width: 1280px) { Esta es la base
+
+    // }
+    @media (max-width: 1440px) {
+    }
+
+    @media (max-width: 1920px) {
+    }
+
+    @media (min-width: 1921px) {
+        
+    }
 }

@@ -1,13 +1,13 @@
 .layoutside-wrapper {
-    position: fixed;
     background-color: white;
+    position: fixed;
+    filter: drop-shadow(0px 4px 5px rgba(0, 0, 0, 0.25));
+    
+    //esto cambia con los media queries
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    filter: drop-shadow(0px 4px 5px rgba(0, 0, 0, 0.25));
-
-    //esto cambia con los media queries
     right: 86%;
     width: 14%;
     top: 0;
@@ -21,25 +21,39 @@
         flex-direction: row;
         padding: 5%;
         height: 15%;
-        // position: absolute;
-        // top: 10%;
-        // border-bottom: 1px solid black;
         .layoutside-svg-1 {
             width: 70%;
-            // height: 100%;
         }
 
     }
 
 
     @media (max-width: 478px) {
-        right: 84%;
-        width: 16%;
-        top: 0;
-        bottom: 0;
-        height: 100vh;
-        background-color: red;
-        display: none;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        right: 0;
+        width: 100%;
+        top: 90%;
+        height: 10%;
+        //de repente haga un menu de hamburguesa
+
+        .layoutside-svg-1-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: row;
+            padding: 5%;
+            // height: 1%;
+            display: none;
+            .layoutside-svg-1 {
+                display: none;
+                // width: 70%;
+                // height: 100%;
+            }
+
+        }
     
     }
 

@@ -19,18 +19,18 @@ function PlatosTable({ platesData }) {
     <table className='platos-table'>
         <thead>
             <tr>
-                <th>ID</th> 
-                <th>NOMBRE</th>
-                <th>CATEGORÍA</th>
-                <th>FECHA</th>
-                <th>VENTAS</th>
-                <th>VALOR VTA.</th>
-                <th>PRECIO VTA.</th>
-                <th>COSTO</th>
-                <th>DÍAS</th>
+                <th className='platos-table-th'>ID</th> 
+                <th className='platos-table-th'>NOMBRE</th>
+                <th className='platos-table-th'>CATEGORÍA</th>
+                <th className='platos-table-th'>FECHA</th>
+                <th className='platos-table-th'>VENTAS</th>
+                <th className='platos-table-th noshow'>VALOR VTA.</th>
+                <th className='platos-table-th noshow'>PRECIO VTA.</th>
+                <th className='platos-table-th noshow'>COSTO</th>
+                <th className='platos-table-th noshow'>DÍAS</th>
                 {/* <th>Con IVA</th>
-                <th>Con Rec</th> */}
-                <th></th>
+                <th className='platos-table-th'>Con Rec</th> */}
+                <th className='platos-table-th'></th>
             </tr>
         </thead>
         <tbody>
@@ -42,17 +42,17 @@ function PlatosTable({ platesData }) {
                 <td>{plate.Categoria}</td>
                 <td>{plate.Mes_plato}</td>
                 <td>{plate.Cantidad_vendida}</td>
-                <td>{plate.Valor_Venta}</td>
-                <td>{plate.Precio}</td>
-                <td>{plate.Costo}</td>
-                <td>{plate.Dias_en_carta}</td>
+                <td className='noshow'>{plate.Valor_Venta}</td>
+                <td className='noshow'>{plate.Precio}</td>
+                <td className='noshow'>{plate.Costo}</td>
+                <td className='noshow'>{plate.Dias_en_carta}</td>
                 {/* <td>{plate.Con_IVA ? 'Sí' : 'No'}</td>
                 <td>{plate.Con_Rec ? 'Sí' : 'No'}</td> */}
                 <td>
                     <div className='buttons-wrapper'>
                         <svg 
                             onClick={() => deleteButton()}
-                            className='delete-button'
+                            className='delete-button noshow'
                             width="24" 
                             height="24" 
                             viewBox="0 0 24 24" 
@@ -63,7 +63,7 @@ function PlatosTable({ platesData }) {
 
                         <svg 
                             onClick={() => updateButton()}
-                            className='update-button'
+                            className='update-button noshow'
                             width="72" 
                             height="72" 
                             viewBox="0 0 72 72" 
@@ -73,7 +73,7 @@ function PlatosTable({ platesData }) {
                             </g>
                         </svg>
 
-
+                        <button className='more-button'>Ver</button>
 
                     </div>
                 </td>

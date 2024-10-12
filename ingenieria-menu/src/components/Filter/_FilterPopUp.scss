@@ -25,6 +25,11 @@
     border-radius: 10px;
     position: absolute;
     top: 30%;
+    
+    p {
+        padding: 1.5rem;
+        font-weight: bold;
+    }
 
     button {
         width: 12rem;
@@ -34,18 +39,15 @@
         background-color: white;
         font-family: Nunito;
         font-size: 16px;
-    }
-    button:hover {
-        cursor: pointer;
-        background-color: #5084fde4;
-        transition: 0.25s;
-        color: white;
+        &:hover {
+            cursor: pointer;
+            background-color: #5084fde4;
+            transition: 0.25s;
+            color: white;        
+        }
     }
 
-    p {
-        padding: 1.5rem;
-        font-weight: bold;
-    }
+    
 
     .options-wrapper {
         margin: 0.5rem;
@@ -87,5 +89,52 @@
             // height: 3rem;
             @include button-blue();
         }
+    }
+
+
+    @media (max-width: 478px) {
+        width: min-content;
+        height: 45%;
+        top: 22%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+        p {
+            margin-top: 1rem;
+            padding: 0;
+        }
+
+        .filter-popup-line {
+            margin-top: 0;
+        }
+
+        .options-wrapper {
+            margin: 1rem;
+        }
+    
+        .filter-apply-button-wrapper .apply-button {
+            width: 8.5rem;
+        }
+    }
+
+    @media (max-width: 767px) {
+    }
+
+    @media (max-width: 991px) {
+    }
+
+    // @media (max-width: 1280px) { Esta es la base
+
+    // }
+    @media (max-width: 1440px) {
+    }
+
+    @media (max-width: 1920px) {
+    }
+
+    @media (min-width: 1921px) {
+        
     }
 }

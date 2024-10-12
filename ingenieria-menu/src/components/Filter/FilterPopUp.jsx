@@ -9,7 +9,6 @@ function FilterPopUp({ setFilter, filter, setFiltersView, applyFilter }) {
     const handleApplyButton = () => { 
         setFiltersView(null)
         applyFilter()
-        // alert('triggerear el fetch otra vez')
     }
 
     return (
@@ -17,36 +16,16 @@ function FilterPopUp({ setFilter, filter, setFiltersView, applyFilter }) {
         <p>Seleccione categoría</p>
 
         <div className='options-wrapper'>
-            <button 
-                onClick={(e) => handleFilterSelection(e)} 
-                value='FONDOS' 
-                className={filter.category === 'FONDOS' ? 'options-button active' : 'options-button'}
-            >Fondos
-            </button>
-        
-            <button
-            onClick={(e) => handleFilterSelection(e)}
-            value='ENTRADAS'
-            className={filter.category === 'ENTRADAS' ? 'options-button active' : 'options-button'}
-            >
-            Entradas
-            </button>
-
-            <button
-            onClick={(e) => handleFilterSelection(e)}
-            value='POSTRES'
-            className={filter.category === 'POSTRES' ? 'options-button active' : 'options-button'}
-            >
-            Postres
-            </button>
-
-            <button
-            onClick={(e) => handleFilterSelection(e)}
-            value='BEBIDAS'
-            className={filter.category === 'BEBIDAS' ? 'options-button active' : 'options-button'}
-            >
-            Bebidas
-            </button>
+            {['FONDOS', 'ENTRADAS', 'POSTRES', 'BEBIDAS'].map((elem) => {
+                return (
+                    <button 
+                    onClick={(e) => handleFilterSelection(e)} 
+                    value={elem} 
+                    className={filter.category === elem ? 'options-button active' : 'options-button'}
+                    > {elem.charAt(0).toUpperCase() + elem.slice(1).toLowerCase()}
+                    </button>        
+                )
+            })}
 
         </div>
 

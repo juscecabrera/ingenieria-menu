@@ -8,7 +8,7 @@ function TableEditIcon({ updateButton }) {
         viewBox="0 0 72 72" 
         fill="none" 
         xmlns="http://www.w3.org/2000/svg"
-        className='update-button'
+        className='update-button noshow'
         onClick={() => updateButton()}
     >
         <g id="edit-01">
